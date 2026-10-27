@@ -58,7 +58,7 @@ const STEPS: Step[] = [
     id: 'test',
     verb: 'Test',
     icon: 'play',
-    text: 'Run the program in the simulator, set the wiring for an HW-130 motor shield, download an Arduino sketch and test safely.',
+    text: 'Run the program in the simulator, set the wiring for an motor shield, download an Arduino sketch and test safely.',
     where: 'Mission 07 Test the Robot',
     shot: 'test-the-robot.webp',
     alt: 'Test the Robot in the LMS: the virtual workshop beside the HW-130 motor shield',

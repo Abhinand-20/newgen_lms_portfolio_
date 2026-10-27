@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import { Icon } from './Icons';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -204,21 +204,58 @@ function DemoConversation() {
   );
 }
 
+/** Zooms the stage out as one piece on short screens, so the whole banner fits in one view without anything overlapping. */
+function useFitStage(stageRef: RefObject<HTMLDivElement | null>) {
+  useEffect(() => {
+    const stage = stageRef.current!;
+    const grid = stage.parentElement!;
+    const hero = grid.closest('.hero')!;
+    const fit = () => {
+      // stacked layout (tablet and phone) scrolls anyway
+      if (innerWidth <= 1024) {
+        stage.style.removeProperty('--stage-w');
+        stage.style.removeProperty('--stage-zoom');
+        return;
+      }
+      const col = parseFloat(getComputedStyle(grid).gridTemplateColumns.split(' ')[1]);
+      const w = Math.min(col, 640);
+      const pad = getComputedStyle(hero);
+      const nav = document.querySelector('.nav')?.getBoundingClientRect().height ?? 72;
+      // 24px: the Talk card hangs just below the stage
+      const room = innerHeight - nav - parseFloat(pad.paddingTop) - parseFloat(pad.paddingBottom) - 24;
+      const zoom = Math.max(0.6, Math.min(1, room / (w / 1.1)));
+      stage.style.setProperty('--stage-w', `${w}px`);
+      stage.style.setProperty('--stage-zoom', String(zoom));
+    };
+    fit();
+    addEventListener('resize', fit);
+    return () => removeEventListener('resize', fit);
+  }, [stageRef]);
+}
+
 export default function Hero() {
+  const stageRef = useRef<HTMLDivElement>(null);
+  useFitStage(stageRef);
+
   return (
     <section className="hero theme-blue" id="top" aria-labelledby="hero-title">
       <div className="container hero-grid">
         <div className="reveal">
           <p className="eyebrow">Learn by Talking. Discover by Doing.</p>
           <h1 id="hero-title">
-            Beyond Learning <span className="accent">Into Creating.</span>
+            <span className="h1-line">
+              <span>Beyond Learning</span>
+            </span>{' '}
+            <span className="h1-line accent">
+              <span>Into Creating.</span>
+            </span>
           </h1>
           <p className="lead">
             Meet the AI learning companion that helps young innovators explore science, discover robotics, and turn curiosity
             into real-world creations.
           </p>
         </div>
-        <div className="stage reveal" aria-label="Nova, the AI tutor, next to the Octa-Pod robot, answering a learner's question">
+        <div className="stage reveal" ref={stageRef} aria-label="Nova, the AI tutor, next to the Octa-Pod robot, answering a learner's question">
           <div className="stage-glow" aria-hidden="true" />
           <div className="stage-ring" aria-hidden="true" />
           <div className="stage-ring r2" aria-hidden="true" />

@@ -42,9 +42,7 @@ export default function Nav() {
     <header className="nav">
       <nav className="container nav-in" aria-label="Main">
         <a className="brand" href="#top" aria-label="B2OF Learning, back to the top">
-          <span className="brand-mark">
-            <Icon name="bot" />
-          </span>
+          <img className="brand-mark" src="/assets/b2of-logo.png" alt="" width={282} height={260} />
           <span className="brand-word">
             B2OF<span>LEARNING</span>
           </span>
