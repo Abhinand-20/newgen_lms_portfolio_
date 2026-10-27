@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 // children that cascade in after their `.reveal` parent (keep in sync with globals.css)
 const STAGGER =
-  '.section-head > *, .points li, .cats > li, .features > li, .ben-head, .ben-tag, .ben ul > li, .ben-out, .shift ol > li, .cmp .us li, .dots li, .badges li, .rewards li, .rail-stop, .cta > *';
+  '.section-head > *, .points li, .cats > li, .rail-stop, .cta > *';
 
 /** Fades each `.reveal` element in once, the first time it scrolls into view. */
 export default function RevealObserver() {
