@@ -124,7 +124,9 @@ export default function Journey() {
             The B2OF Learning learning journey
           </p>
           <h2 id="journey-title">
-            From Curiosity <span className="accent">to Creation</span>
+            From Curiosity
+            <br />
+            <span className="accent">to Creation</span>
           </h2>
           <p className="lead">
             B2OF Learning introduces learners to robotics through a guided journey that connects scientific understanding with
