@@ -42,10 +42,12 @@ p { margin: 0; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
 .wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.section { padding-block: clamp(64px, 9vw, 112px); }
+.section { padding-block: clamp(32px, 4.5vw, 56px); }
 .eyebrow { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); }
 .lede { font-size: 18px; color: var(--ink-soft); max-width: 62ch; }
-.head { display: grid; gap: 14px; margin-bottom: 40px; }
+.head { display: grid; gap: 14px; margin-bottom: 28px; }
+/* In grid layouts the wrap's gap already spaces the head from what follows. */
+.miko .head, .day .head, .disc .head { margin-bottom: 0; }
 .head.center { text-align: center; justify-items: center; }
 .tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
 .tag.real { background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green-ink); }
@@ -69,7 +71,7 @@ a { color: inherit; }
 
 /* Hero */
 .hero { background: radial-gradient(circle at 18% 10%, var(--wash-a) 0%, transparent 55%), radial-gradient(circle at 90% 85%, var(--wash-b) 0%, transparent 55%), var(--bg); }
-.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; padding-block: clamp(48px, 7vw, 88px); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; padding-block: clamp(24px, 3.5vw, 44px); }
 @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
 .hero h1 { font-size: clamp(42px, 6.6vw, 76px); font-weight: 700; letter-spacing: -0.01em; }
 .hero h1 em { font-style: normal; color: var(--purple); }
@@ -97,7 +99,7 @@ a { color: inherit; }
 .note { font-size: 13px; color: var(--muted); }
 
 /* Miko */
-.miko .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.miko .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 @media (max-width: 900px) { .miko .wrap { grid-template-columns: 1fr; } }
 .points { display: grid; gap: 18px; margin-top: 8px; }
 .point { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
@@ -151,7 +153,7 @@ a { color: inherit; }
 .library span { font-size: 14px; color: var(--muted); }
 
 /* A day */
-.day .wrap { display: grid; gap: 30px; }
+.day .wrap { display: grid; gap: 28px; }
 .steps { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; list-style: none; padding: 0; margin: 0; }
 @media (max-width: 900px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -173,7 +175,7 @@ a { color: inherit; }
 .miko-says p { font-family: var(--display); font-weight: 600; color: var(--ink); font-size: 17px; line-height: 1.35; }
 
 /* Discover */
-.disc .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
+.disc .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
 @media (max-width: 900px) { .disc .wrap { grid-template-columns: 1fr; } }
 .discover-card { background: var(--surface); border-radius: 28px; padding: 22px; box-shadow: var(--shadow); display: grid; gap: 16px; min-width: 0; }
 .discover-card h3 { font-size: 22px; }
@@ -234,9 +236,9 @@ td.us { color: var(--ink); }
 
 /* Start */
 .start { background: radial-gradient(circle at 20% 20%, var(--wash-a) 0%, transparent 50%), radial-gradient(circle at 85% 80%, var(--wash-b) 0%, transparent 55%), var(--bg); text-align: center; }
-.start .wrap { display: grid; justify-items: center; gap: 18px; }
+.start .wrap { display: grid; justify-items: center; gap: 14px; }
 .start h2 { font-size: clamp(34px, 5vw, 56px); }
-.start img { width: 120px; }
+.start img { width: 96px; }
 footer { border-top: 1px solid var(--line); }
 footer .wrap { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding-block: 26px; color: var(--muted); font-size: 14px; }
 footer .mono { width: 44px; height: 44px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
