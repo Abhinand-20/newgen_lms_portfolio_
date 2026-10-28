@@ -1,12 +1,13 @@
 import Benefits from '@/components/Benefits';
 import Compare from '@/components/Compare';
+import Features from '@/components/Features';
 import Hero from '@/components/Hero';
 import { IconSprite } from '@/components/Icons';
 import Journey from '@/components/Journey';
 import Nav from '@/components/Nav';
 import Progress from '@/components/Progress';
 import RevealObserver from '@/components/RevealObserver';
-import { Companion, Cta, Hangar } from '@/components/Sections';
+import { Cta, Hangar } from '@/components/Sections';
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Companion />
+        <Features />
         <Hangar />
         <Journey />
         <Progress />

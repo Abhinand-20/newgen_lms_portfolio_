@@ -45,7 +45,7 @@ const AUDIENCES = [
     icon: 'cap',
     tag: 'Bring STEM concepts to life through guided, project-based learning.',
     items: [
-      ['Hands-On STEM Education', 'Use robotics projects to connect science, technology, engineering, and programming.'],
+      ['Hands-On STEAM Education', 'Use robotics projects to connect science, technology, engineering, and programming.'],
       ['Structured Learning Journeys', 'Guide students through building, testing, experimenting, and completing challenges.'],
       ['Support Different Learning Needs', 'Use AI-guided explanations and learning activities to support students at different levels.'],
       ['Encourage Critical Thinking', 'Help students investigate problems, test solutions, and improve their designs.'],

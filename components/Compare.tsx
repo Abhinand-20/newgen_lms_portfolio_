@@ -22,7 +22,7 @@ const COMPARE = [
     num: '02',
     topic: 'Explanations',
     lms: 'Usually provided through prepared learning content.',
-    us: "Pre-voiced lesson explanations, plus AI-generated answers to learners' own questions, where supported.",
+    us: "Lesson explanations, plus AI-generated answers to learners' own questions, where supported.",
     checks: ["If an answer wasn't clear, the tutor explains it another way with a new example", 'Real-world examples and videos for each concept'],
   },
   {
@@ -42,7 +42,6 @@ const COMPARE = [
     lms: 'Depends on platform-specific safeguards.',
     us: "B2OF's verified controls:",
     checks: [
-      'Sign-in required for every learning route we tested',
       'Tutor told never to give test answers; tone adapts to frustration',
       'Typing available instead of the microphone; spoken answers can be checked before sending',
     ],
