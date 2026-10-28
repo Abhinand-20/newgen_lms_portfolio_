@@ -1,51 +1,5 @@
 import type { CSSProperties } from 'react';
 import { Icon } from './Icons';
-import NovaChat from './NovaChat';
-
-export function Companion() {
-  return (
-    <section className="theme-violet" id="companion" aria-labelledby="companion-title">
-      <div className="container two-col">
-        <div className="reveal">
-          <h2 id="companion-title">
-            Not Just an AI That Answers. <span className="accent">A Companion That Guides.</span>
-          </h2>
-          <p className="lead" style={{ marginTop: 18 }}>
-            Students can talk or type. The tutor explains in short, simple language, then asks a question back, so the learner
-            decides what to explore next.
-          </p>
-          <ul className="points">
-            <li>
-              <span className="mark">
-                <Icon name="check" />
-              </span>
-              <span>
-                <b>Voice or text:</b> ask in whichever way feels natural.
-              </span>
-            </li>
-            <li>
-              <span className="mark">
-                <Icon name="check" />
-              </span>
-              <span>
-                <b>Hints before answers:</b> built to spark curiosity, not replace thinking.
-              </span>
-            </li>
-            <li>
-              <span className="mark">
-                <Icon name="check" />
-              </span>
-              <span>
-                <b>Ask again:</b> a different explanation or example whenever something is unclear.
-              </span>
-            </li>
-          </ul>
-        </div>
-        <NovaChat />
-      </div>
-    </section>
-  );
-}
 
 const CATEGORIES = [
   { name: 'Engines', color: '#f08c00', models: ['V6 Engine', 'Motorized Pump'] },

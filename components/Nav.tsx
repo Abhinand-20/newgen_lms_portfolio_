@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Icon } from './Icons';
 
 const LINKS = [
+  { id: 'features', label: 'Features' },
   { id: 'hangar', label: 'Robots' },
   { id: 'journey', label: 'Journey' },
   { id: 'progress', label: 'Progress' },
@@ -42,10 +43,8 @@ export default function Nav() {
     <header className="nav">
       <nav className="container nav-in" aria-label="Main">
         <a className="brand" href="#top" aria-label="B2OF Learning, back to the top">
-          <img className="brand-mark" src="/assets/b2of-logo.png" alt="" width={282} height={260} />
-          <span className="brand-word">
-            B2OF<span>LEARNING</span>
-          </span>
+          <img className="brand-mark" src="/assets/b2of-wordmark.png" alt="" width={736} height={217} />
+          <span className="brand-word">LEARNING</span>
         </a>
         <button
           className="nav-toggle"
