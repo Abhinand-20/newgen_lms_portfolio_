@@ -14,7 +14,7 @@ const FEATURES = [
     title: 'Visual progress',
     text: 'A path through all nine missions in Mission Control; they open in order, and the Showcase is open from the start.',
   },
-  { icon: 'award', title: 'Levels and badges', text: 'Six levels from Robot Explorer to Master and the Engineer badge from level 2.' },
+  { icon: 'award', title: 'Levels and badges', text: 'Progress through levels from Robot Explorer to Master, unlocking the Engineer badge at Level 2.' },
   { icon: 'trophy', title: 'Positive reinforcement', text: 'Praise for trying and experimenting, and a celebration when a mission is done.' },
 ];
 
