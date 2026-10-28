@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>B2OF Marketing Website</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -760,16 +760,193 @@ a.card:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
 .mcard .mterm { font: 800 .95rem var(--body); color: var(--brand-ink); }
 figcaption.gloss { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem; color: var(--ink-2); }
 figcaption.gloss b { color: var(--ink); margin-right: 6px; }
+
+/* chapter 2 and the marketing screens */
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.panel .mh { font: 700 .76rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.panel.hot { border: 2px solid var(--brand); background: color-mix(in srgb, var(--brand-tint) 55%, var(--surface)); }
+.yearline { display: flex; align-items: center; gap: 10px; font-size: .95rem; color: var(--ink-2); }
+.yearline .i { color: var(--brand-ink); }
+.yearline b { color: var(--ink); }
+.dlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.dlist li { position: relative; padding-left: 16px; font-size: .92rem; color: var(--ink-2); }
+.dlist li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+.dlist li b { color: var(--ink); }
+.states { display: flex; flex-wrap: wrap; gap: 8px; }
+.states span { font: 700 .9rem var(--body); padding: 6px 12px; border-radius: 999px; background: var(--blue-tint); color: var(--s1); }
+.target { display: flex; align-items: baseline; gap: 10px; padding: 10px 14px; border-radius: 12px; background: var(--brand-tint); }
+.target b { font: 800 1.9rem/1 var(--body); color: var(--brand-ink); font-variant-numeric: tabular-nums; }
+.target span { font-weight: 700; color: var(--ink); }
+.targets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.targets div { display: grid; gap: 2px; padding: 10px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--brand); }
+.targets b { font: 800 1.4rem/1.1 var(--body); color: var(--ink); font-variant-numeric: tabular-nums; }
+.targets span { font: 700 .76rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+@media (max-width: 900px) { .three { grid-template-columns: 1fr; } .targets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* weekly tracker */
+.wk-track { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.wk-track input { width: 100%; max-width: 110px; font: 700 1rem var(--body); color: var(--ink); background: var(--bg); border: 1.5px solid var(--line-strong); border-radius: 8px; padding: 5px 8px; text-align: right; font-variant-numeric: tabular-nums; }
+.wk-track input:focus-visible { outline: 3px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+.wk-track input:disabled { background: transparent; border-color: var(--line); color: var(--ink); }
+.wk-track td.n { text-align: right; }
+.wk-track td.prog { width: 30%; }
+.pbar { display: inline-block; vertical-align: middle; width: calc(100% - 64px); height: 8px; border-radius: 4px; background: var(--code-bg); overflow: hidden; margin-right: 8px; }
+.pbar i { display: block; height: 100%; width: 0; border-radius: 4px; background: var(--line-strong); transition: width .4s; }
+.pbar i.ok { background: var(--good); } .pbar i.mid { background: var(--watch); } .pbar i.low { background: var(--fix); }
+td.prog b { font: 700 .86rem var(--mono); font-variant-numeric: tabular-nums; }
+.dgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; }
+.dgrid label { display: grid; gap: 3px; font-size: .84rem; color: var(--ink-2); font-weight: 700; }
+.dgrid input { max-width: none; }
+.rates { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.rates li { display: flex; justify-content: space-between; gap: 10px; font-size: .92rem; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.rates li b { font-variant-numeric: tabular-nums; color: var(--brand-ink); }
+.tstatus { margin: 0; }
+/* roadmap */
+.rtotals { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.rtotals div { display: grid; gap: 4px; padding: 10px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.rtotals span:first-child { font: 700 .74rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.rtotals b { font: 800 1.15rem var(--body); font-variant-numeric: tabular-nums; }
+.rtotals .pbar { width: 100%; margin: 0; }
+.roadmap { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px; position: relative; }
+.roadmap::before { content: ""; position: absolute; left: 4%; right: 4%; top: 22px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--s1), var(--brand)); }
+.rcard { position: relative; display: grid; gap: 4px; align-content: start; height: 100%; padding: 30px 10px 10px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s; }
+.rcard::before { content: ""; position: absolute; left: 50%; top: 14px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--surface); border: 3px solid var(--s1); }
+.rcard:hover { border-color: var(--brand); transform: translateY(-2px); }
+.rcard:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.rcard b { font-size: .98rem; }
+.rdate { font: 600 .72rem var(--mono); color: var(--ink-2); }
+.rfocus { font-size: .84rem; color: var(--ink-2); line-height: 1.35; }
+.rmeters { display: grid; gap: 2px; margin-top: 4px; padding-top: 6px; border-top: 1px solid var(--line); }
+.rm { display: flex; justify-content: space-between; gap: 4px; font-size: .74rem; color: var(--ink-2); }
+.rm em { font-style: normal; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) { .wk-track { grid-template-columns: 1fr; } .roadmap { grid-template-columns: repeat(3, minmax(0, 1fr)); } .roadmap::before { display: none; } .rtotals { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* week pages: compact rows so every screen keeps the same text size */
+.wk-track .tbl td, .wk-track .tbl th { padding: 4px 12px; }
+.wk-track input { padding: 2px 8px; font-size: .95rem; }
+.wk-track .panel { gap: 6px; padding: 12px 16px; }
+.dgrid { gap: 4px 14px; }
+.dgrid label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.dgrid label span { flex: 1; }
+.dgrid input { max-width: 92px; }
+.rates li { padding: 2px 0; }
+
+/* week pages (static, chapter 4.1 format) */
+.tmini { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tmini .target b { font-size: 1.5rem; }
+.panel .mh + .ilist, .panel .mh + .dlist { margin-top: 2px; }
+.rtotals { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.rcard { min-height: 0; }
+
+.pg-next b { max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+
+.sublink { font-weight: 800; color: var(--brand-ink); text-decoration: none; }
+.sublink:hover { text-decoration: underline; }
+
+/* roadmap grid: phases, weeks, one bar per activity */
+.rmgrid { display: grid; grid-template-columns: minmax(150px, 1.5fr) repeat(9, minmax(0, 1fr)) minmax(70px, .8fr); gap: 6px 0; align-items: stretch; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.rm-phase { margin: 0 3px; padding: 6px 10px; border-radius: 999px; text-align: center; font: 700 .76rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--brand-ink); background: var(--brand-tint); }
+.rm-h { align-self: end; padding: 0 8px 6px 0; font: 700 .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.rm-tot { text-align: right; padding-right: 0; }
+.rm-week { display: grid; justify-items: center; gap: 1px; padding: 6px 2px; margin: 0 3px; border-radius: 10px; text-decoration: none; color: var(--ink); border-bottom: 2px solid var(--line); transition: background .2s; }
+.rm-week:hover { background: var(--bg); }
+.rm-week:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.rm-week b { font-size: .92rem; }
+.rm-week span { font: 600 .7rem var(--mono); color: var(--ink-2); text-align: center; }
+.rm-name { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .95rem; padding-right: 8px; }
+.rm-name .i { color: var(--brand-ink); }
+.rm-cell { min-height: 38px; }
+.rm-cell.on { display: grid; place-items: center; background: color-mix(in srgb, var(--rc) 18%, var(--surface)); border-top: 2px solid var(--rc); border-bottom: 2px solid var(--rc); }
+.rm-cell.on.first { border-left: 2px solid var(--rc); border-radius: 10px 0 0 10px; margin-left: 3px; }
+.rm-cell.on.last { border-right: 2px solid var(--rc); border-radius: 0 10px 10px 0; margin-right: 3px; }
+.rm-cell.on b { font: 800 .9rem var(--body); font-variant-numeric: tabular-nums; color: var(--ink); }
+.rm-cell.c1 { --rc: var(--s1); } .rm-cell.c2 { --rc: var(--s2); } .rm-cell.c3 { --rc: var(--s5); } .rm-cell.c4 { --rc: var(--s3); } .rm-cell.c5 { --rc: var(--s4); } .rm-cell.c6 { --rc: var(--good); }
+.rm-total { display: grid; place-items: center end; font: 800 1.05rem var(--body); font-variant-numeric: tabular-nums; color: var(--brand-ink); }
+
+.rm-name { white-space: nowrap; }
+.rmgrid { grid-template-columns: minmax(170px, 1.6fr) repeat(9, minmax(0, 1fr)) minmax(70px, .8fr); }
+
+/* roadmap: eight weeks, then the January launch */
+.rmgrid { grid-template-columns: minmax(170px, 1.6fr) repeat(8, minmax(0, 1fr)) minmax(120px, 1.3fr) minmax(70px, .8fr); }
+.rm-go { margin: 0 3px 0 10px; color: var(--good); background: var(--good-bg); }
+.rm-jan { margin-left: 10px; border-bottom-color: var(--good); }
+.rm-launch { grid-column: 10; display: grid; place-content: center; justify-items: center; gap: 6px; margin: 0 3px 0 10px; padding: 12px 10px; text-align: center; border-radius: 14px; border: 2px dashed var(--good); background: var(--good-bg); color: var(--ink); }
+.rm-launch .i { width: 30px; height: 30px; color: var(--good); }
+.rm-launch b { font-size: 1rem; }
+.rm-launch span { font-size: .82rem; color: var(--ink-2); }
+
+/* header brand: the b2of.com logo on a white plate (dark text logo), then "Learning" */
+.site-logo .logo-chip { display: flex; align-items: center; background: #fff; border-radius: 9px; padding: 4px 8px; box-shadow: 0 0 0 1px var(--line); }
+.site-logo .logo-chip img { height: 28px; width: auto; display: block; background: none; padding: 0; border-radius: 0; }
+.site-logo .lt { font: 800 1.12rem var(--body); color: var(--ink); }
+
+.rm-cell.c7 { --rc: var(--brand); }
+
+.rmgrid { gap: 4px 0; padding: 12px 16px; }
+.rm-cell { min-height: 32px; }
+.rm-week { padding: 4px 2px; }
+
+.price1 { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.price1 .target b { font-size: 2.2rem; }
+.price1 .note { margin: 0; }
+
+/* ===== b2of.com theme: brand blue #3FA8F4 and green #39B44A (its blue-to-green gradient), deep blue text #1A73B8, near-black #212529; Montserrat for text, Paytone One for headings ===== */
+:root {
+  --bg: #F5F8FB; --surface: #FFFFFF; --ink: #212529; --ink-2: #5C6670; --line: rgba(33,37,41,.12); --line-strong: rgba(33,37,41,.34);
+  --brand: #3FA8F4; --brand-ink: #1A73B8; --brand-tint: #E5F3FE; --code-bg: #E9EEF3; --blue-tint: #E5F3FE;
+  --good: #23853A; --good-bg: #E3F5E6; --watch: #B07A00; --watch-bg: #FFF3CD; --fix: #C62F3E; --fix-bg: #FBE3E6;
+  --s1: #3FA8F4; --s2: #1A73B8; --s3: #39B44A; --s4: #F2B705; --s5: #0DB4D6; --s6: #20A98A;
+  --grad: linear-gradient(90deg, #3FA8F4, #39B44A);
+  --body: "Montserrat", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --display: "Paytone One", "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --tone-white: #FFFFFF; --tone-light: #F5F8FB; --tone-warm: #F5F8FB; --tone-cool: #F5F8FB;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1A27; --surface: #152536; --ink: #EEF3F8; --ink-2: #A8B6C4; --line: rgba(238,243,248,.13); --line-strong: rgba(238,243,248,.38);
+  --brand: #5DB8F7; --brand-ink: #8FCBFA; --brand-tint: #12304A; --code-bg: #1C3046; --blue-tint: #12304A;
+  --good: #5BCB6A; --good-bg: #15361D; --watch: #F2C14E; --watch-bg: #3A2F12; --fix: #FF8291; --fix-bg: #3D1A21;
+  --s1: #5DB8F7; --s2: #4A9BE0; --s3: #5BCB6A; --s4: #F5C842; --s5: #3AD6F5; --s6: #3CC9A6;
+  --tone-white: #0E1A27; --tone-light: #0E1A27; --tone-warm: #0E1A27; --tone-cool: #0E1A27; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0E1A27; --surface: #152536; --ink: #EEF3F8; --ink-2: #A8B6C4; --line: rgba(238,243,248,.13); --line-strong: rgba(238,243,248,.38);
+  --brand: #5DB8F7; --brand-ink: #8FCBFA; --brand-tint: #12304A; --code-bg: #1C3046; --blue-tint: #12304A;
+  --good: #5BCB6A; --good-bg: #15361D; --watch: #F2C14E; --watch-bg: #3A2F12; --fix: #FF8291; --fix-bg: #3D1A21;
+  --s1: #5DB8F7; --s2: #4A9BE0; --s3: #5BCB6A; --s4: #F5C842; --s5: #3AD6F5; --s6: #3CC9A6;
+  --tone-white: #0E1A27; --tone-light: #0E1A27; --tone-warm: #0E1A27; --tone-cool: #0E1A27; color-scheme: dark; }
+body { font-family: var(--body); }
+h1, h2, .hero-title, .sec > header h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; }
+.hero-title span { background-image: linear-gradient(90deg, #3FA8F4, #39B44A, #3FA8F4); }
+.site-h::after { background: var(--grad); }
+.site-logo .lt { font-family: var(--display); font-weight: 400; color: var(--brand-ink); }
+.dots button.on { background: var(--brand); border-color: var(--brand); }
+.dots button span { background: #212529; }
+.pg-next:hover { background: color-mix(in srgb, var(--brand) 22%, var(--surface)); }
+.sec > header .badge, .badge { background: var(--brand-tint); color: var(--brand-ink); }
+.panel.hot { border-color: var(--s3); background: color-mix(in srgb, var(--good-bg) 60%, var(--surface)); }
+.dlist li::before { background: var(--grad); }
+.target, .tmini .target { background: var(--brand-tint); }
+.targets div { border-top: 4px solid transparent; border-image: var(--grad) 1; border-image-slice: 1 1 0 1; }
+.rm-phase { color: var(--brand-ink); background: var(--brand-tint); }
+.rm-cell.c1 { --rc: var(--s1); } .rm-cell.c2 { --rc: var(--s2); } .rm-cell.c3 { --rc: var(--s5); } .rm-cell.c4 { --rc: var(--s3); } .rm-cell.c5 { --rc: var(--s4); } .rm-cell.c6 { --rc: var(--good); } .rm-cell.c7 { --rc: var(--s6); }
+.rm-total { color: var(--brand-ink); }
+.dg .box.hot { stroke: var(--s3); fill: var(--good-bg); }
+.dg .hot-g use.ic { color: var(--good); }
+.dg .ln.hot { stroke: var(--s3); }
+.dg .mk-hot { fill: var(--s3); }
+
+.targets div { border-image: none; border-top: 1px solid var(--line); background-color: var(--surface); background-image: var(--grad); background-size: 100% 4px; background-repeat: no-repeat; background-position: top left; }
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Paytone+One&display=swap">
 <header class="site-h" id="siteHead">
-  <a class="site-logo" href="#b-top" id="siteLogo"><span>B2OF Learning <small>· Go-to-market plan</small></span></a>
+  <a class="site-logo" href="#b-top" id="siteBrand" aria-label="B2OF Learning, back to the start"><span class="logo-chip"><img src="/assets/learning-marketing/img-01.png" alt="B2OF"></span><span class="lt">Learning</span><small>· Go-to-Market Plan</small></a>
   <nav class="site-menu" id="siteMenu" aria-label="Sections">
-    <a href="#b-day" data-band="b-day">Product</a><a href="#b-programs" data-band="b-programs">Offers</a><a href="#b-levels" data-band="b-levels">Catalogue</a><a href="#b-marketing" data-band="b-marketing">Marketing</a><a href="#b-leads" data-band="b-leads">Funnel</a><a href="#b-pitch" data-band="b-pitch">Numbers</a><a href="#b-weeks" data-band="b-weeks">Launch</a>
+    <a href="#b-day" data-band="b-day">Product</a><a href="#b-programs" data-band="b-programs">Program</a><a href="#b-levels" data-band="b-levels">Catalogue</a><a href="#b-w1" data-band="b-w1">Weekly Plan</a><a href="#b-roadmap" data-band="b-roadmap">Roadmap</a>
   </nav>
   <nav class="pager" aria-label="Previous and next screen">
     <button type="button" class="pg-btn" id="pgPrev" aria-label="Previous screen"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15l7-7 7 7"/></svg></button>
-    <span class="pg-count"><b id="pgNow">01</b> / <span id="pgAll">11</span></span>
-    <button type="button" class="pg-next" id="pgNext"><span class="pg-k" id="pgNextK">Next</span><b id="pgNextT">The product</b><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></button>
+    <span class="pg-count"><b id="pgNow">01</b> / <span id="pgAll">20</span></span>
+    <button type="button" class="pg-next" id="pgNext"><span class="pg-k" id="pgNextK">Next</span><b id="pgNextT">The Product</b><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></button>
   </nav>
 </header>
 <nav class="dots" id="dots" aria-label="Screens"></nav>
@@ -780,45 +957,48 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     <div class="band-in"><div class="fit">
       <div class="hero">
         <div class="hero-copy">
-          <p class="kicker">B2OF Learning · Go-to-market plan · India</p>
-          <h1 class="hero-title">One Day Bot and After School <span>from the first lead to break-even</span></h1>
-          <p class="lede">We sell a robot day to schools, keep them as weekly customers, and upsell their students to a monthly After School course.</p>
+          <p class="kicker">B2OF Learning · Go-to-Market Plan · South India</p>
+          <h1 class="hero-title">One Day Bot <span>A Robot Day Every Week of the School Year</span></h1>
+          <p class="lede">We bring a robot day to schools every week, all year, with an AI tutor beside every student.</p>
         </div>
         <div class="showcase">
-      <img class="robot" src="/assets/learning-marketing/img-01.webp" alt="The Octa-Pod robot learners build">
-      <div class="tutors"><img src="/assets/learning-marketing/img-02.webp" alt="Tutor"><img src="/assets/learning-marketing/img-03.webp" alt="Tutor"><img src="/assets/learning-marketing/img-04.webp" alt="Tutor"><img src="/assets/learning-marketing/img-05.webp" alt="Tutor"><img src="/assets/learning-marketing/img-06.webp" alt="Tutor"><img src="/assets/learning-marketing/img-07.webp" alt="Tutor"><img src="/assets/learning-marketing/img-08.webp" alt="Tutor"></div>
+      <img class="robot" src="/assets/learning-marketing/img-02.webp" alt="The Octa-Pod robot learners build">
+      <div class="tutors"><img src="/assets/learning-marketing/img-03.webp" alt="Tutor"><img src="/assets/learning-marketing/img-04.webp" alt="Tutor"><img src="/assets/learning-marketing/img-05.webp" alt="Tutor"><img src="/assets/learning-marketing/img-06.webp" alt="Tutor"><img src="/assets/learning-marketing/img-07.webp" alt="Tutor"><img src="/assets/learning-marketing/img-08.webp" alt="Tutor"><img src="/assets/learning-marketing/img-09.webp" alt="Tutor"></div>
           <p><b>One robot per student, seven AI tutors to choose from.</b></p>
         </div>
       </div>
     </div></div>
   </section>
 
-  <section class="band" id="b-day" data-num="01" data-title="The product">
+  <section class="band" id="b-day" data-num="01" data-title="The Product">
     <div class="band-in"><div class="fit"><article class="sec" id="day">
-      <header><span class="badge"><svg class="i"><use href="#i-route"/></svg></span><p class="kicker">Chapter 1 · Product</p><h2>What schools buy: one program day</h2><p>Our value proposition: every student builds a robot, with an AI tutor beside them the whole day.</p></header>
+      <header><span class="badge"><svg class="i"><use href="#i-route"/></svg></span><p class="kicker">Chapter 1 · Product</p><h2>One Day Program</h2><p>Our value proposition: every student builds a robot, with an AI tutor beside them the whole day.</p></header>
       <figure><div class="scroll" id="dgDay"></div></figure>
     </article></div></div>
   </section>
 
-  <section class="band" id="b-programs" data-num="02" data-title="Offers and pricing">
+  <section class="band" id="b-programs" data-num="02" data-title="One Day Bot Program">
     <div class="band-in"><div class="fit"><article class="sec" id="programs">
-      <header><span class="badge"><svg class="i"><use href="#i-layers"/></svg></span><p class="kicker">Chapter 2 · Offers and pricing</p><h2>Two offers, two buyers</h2><p>Schools buy the core offer. Parents buy the upsell.</p></header>
-      <div class="prices">
-        <div class="price hot"><span class="badge"><svg class="i"><use href="#i-school"/></svg></span><span class="otag">Core offer · B2B · buyer: the school</span><h3>One Day Bot</h3><p class="amt"><b>₹300</b> per student per day</p><p class="usd">in school · one day a week</p><ul class="ilist">
-          <li><svg class="i"><use href="#i-robot"/></svg><span>Each student builds and runs <b>one bot</b> that day</span></li>
-          <li><svg class="i"><use href="#i-layers"/></svg><span>Each grade gets bots from <b>its own level</b></span></li>
-          <li><svg class="i"><use href="#i-refresh"/></svg><span>A <b>new bot every week</b>, so schools stay customers</span></li></ul></div>
-        <div class="price"><span class="badge blue"><svg class="i"><use href="#i-star"/></svg></span><span class="otag blue">Upsell · B2C · buyer: the parent</span><h3>After School</h3><p class="amt"><b>₹3,000</b> per student per month</p><p class="usd">monthly subscription · 3 bots · 6 sessions</p><ul class="ilist">
-          <li><svg class="i"><use href="#i-route"/></svg><span>Moves up <b>one level about every 7 months</b></span></li>
-          <li><svg class="i"><use href="#i-trophy"/></svg><span>A <b>medal</b> for each level finished</span></li>
-          <li><svg class="i"><use href="#i-users"/></svg><span>Starts at the level that <b>fits the grade</b></span></li></ul></div>
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 2 · One Day Bot Program</p><h2>The One Day Bot Program</h2><p>One program day a week at each school. This is what we do on and after each day.</p></header>
+      <div class="price1"><div class="target"><b>₹300</b><span>per student, per program day</span></div><p class="note">One simple price for every grade and every robot.</p></div>
+      <div class="two">
+        <div class="panel hot"><span class="mh">On the Day</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-users"/></svg><span>Our trainers arrive with the kits</span></li>
+          <li><svg class="i"><use href="#i-layers"/></svg><span>Students work in batches of about 50</span></li>
+          <li><svg class="i"><use href="#i-robot"/></svg><span>Each student builds and runs one robot with the AI tutor</span></li>
+          <li><svg class="i"><use href="#i-trophy"/></svg><span>A showcase and a certificate for every student</span></li></ul></div>
+        <div class="panel"><span class="mh">After the Day</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-chart"/></svg><span>A results report for the principal</span></li>
+          <li><svg class="i"><use href="#i-cloud"/></svg><span>Students' work shared with the school</span></li>
+          <li><svg class="i"><use href="#i-refresh"/></svg><span>Next week's robot planned for each grade</span></li></ul></div>
       </div>
+      <p class="yearline"><svg class="i"><use href="#i-route"/></svg><span><b>Every week:</b> a new robot, and each grade climbs its own level.</span></p>
     </article></div></div>
   </section>
 
-  <section class="band" id="b-levels" data-num="03" data-title="Product catalogue">
+  <section class="band" id="b-levels" data-num="03" data-title="Product Catalogue">
     <div class="band-in"><div class="fit"><article class="sec" id="levels">
-      <header><span class="badge"><svg class="i"><use href="#i-robot"/></svg></span><p class="kicker">Chapter 3 · Product catalogue</p><h2>81 robots in four levels</h2><p>A deep catalogue drives repeat business. Pick a level to see what students build, and when.</p></header>
+      <header><span class="badge"><svg class="i"><use href="#i-robot"/></svg></span><p class="kicker">Chapter 3 · Product Catalogue</p><h2>80 Robots in Four Levels</h2><p>A new robot every week keeps students coming back. Pick a level to see what they build, and in which week.</p></header>
       <div class="keep">
         <div class="ltabs" role="tablist" aria-label="Levels" id="levelTabs"></div>
         <div class="lpanel" id="levelPanel" role="tabpanel"></div>
@@ -826,77 +1006,276 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     </article></div></div>
   </section>
 
-  <section class="band" id="b-marketing" data-num="04" data-title="Marketing activities">
-    <div class="band-in"><div class="fit"><article class="sec" id="marketing">
-      <header><span class="badge"><svg class="i"><use href="#i-megaphone"/></svg></span><p class="kicker">Chapter 4 · Marketing activities</p><h2>The marketing plan</h2><p>Four activities, every week, that create leads and turn them into opportunities.</p></header>
-      <ol class="mplan">
-        <li class="mcard"><span class="mstep">1</span><span class="mic"><svg class="i"><use href="#i-video"/></svg></span><span class="mterm">Brand awareness</span><span class="cad">Every week</span><h3>A video post</h3><p>One video on <b>Instagram and Facebook</b>: robots in action, then real program days.</p></li>
-        <li class="mcard"><span class="mstep">2</span><span class="mic"><svg class="i"><use href="#i-mail"/></svg></span><span class="mterm">Lead nurturing</span><span class="cad">Every week</span><h3>Email to every lead</h3><p>The newest video and a booking link, sent to <b>every school on the lead list</b>.</p></li>
-        <li class="mcard"><span class="mstep">3</span><span class="mic"><svg class="i"><use href="#i-chat"/></svg></span><span class="mterm">Outreach · lead qualification</span><span class="cad">Every school day</span><h3>Phone calls</h3><p>About <b>20 calls a day</b> to coordinators and principals, to book a school visit.</p></li>
-        <li class="mcard hot"><span class="mstep">4</span><span class="mic"><svg class="i"><use href="#i-school"/></svg></span><span class="mterm">Sales pitch · conversion</span><span class="cad">In person</span><h3>School visits</h3><p>We go to the school, <b>show a robot and the tutor live</b>, and pitch to the principal.</p></li>
-      </ol>
-    </article></div></div>
-  </section>
 
-  <section class="band" id="b-leads" data-num="05" data-title="Sales funnel">
-    <div class="band-in"><div class="fit"><article class="sec" id="leads">
-      <header><span class="badge"><svg class="i"><use href="#i-target"/></svg></span><p class="kicker">Chapter 5 · Sales funnel</p><h2>From lead to customer</h2><p>Each school moves through the pipeline in about two weeks.</p></header>
-      <figure><div class="scroll" id="dgLeads"></div>
-        <figcaption class="gloss"><span><b>Lead</b> a school on our list</span><span><b>Qualified lead</b> interested on the call</span><span><b>Opportunity</b> agreed to a school visit</span><span><b>Customer</b> runs a program day every week</span></figcaption></figure>
-    </article></div></div>
-  </section>
 
-  <section class="band" id="b-people" data-num="06" data-title="Buyer personas">
-    <div class="band-in"><div class="fit"><article class="sec" id="people">
-      <header><span class="badge"><svg class="i"><use href="#i-handshake"/></svg></span><p class="kicker">Chapter 6 · Buyer personas</p><h2>Four people in every sale</h2><p>What each one cares about, and the message that wins them.</p></header>
-      <div class="personas">
-        <div class="persona"><span class="badge"><svg class="i"><use href="#i-school"/></svg></span><h3>Principal</h3><p class="role">Decision-maker</p><p><b>Wants:</b> visible results, happy parents, safety.</p><p class="say">"Every student builds a robot in one day, with certificates for your school."</p></div>
-        <div class="persona"><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><h3>Activity coordinator</h3><p class="role">Buyer · books it</p><p><b>Wants:</b> easy dates, no setup.</p><p class="say">"Pick a day each week. We bring the kits and the trainers."</p></div>
-        <div class="persona"><span class="badge"><svg class="i"><use href="#i-test"/></svg></span><h3>Science teacher</h3><p class="role">Champion · influencer</p><p><b>Wants:</b> real concepts, engaged students.</p><p class="say">"Every concept has an experiment, and the tutor answers each child."</p></div>
-        <div class="persona"><span class="badge"><svg class="i"><use href="#i-users"/></svg></span><h3>Parents</h3><p class="role">End payer · upsell buyer</p><p><b>Want:</b> to see what their child made.</p><p class="say">"Your child built and programmed this robot today."</p></div>
+
+
+
+
+
+
+
+  <section class="band" id="b-w1" data-num="4.2.1" data-title="Week 1">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.1 · Week 1 · 2–8 Nov 2026</p><h2>Build the Lead Database</h2><p>South India first: the list every call, email and visit will use.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>South India Lead List</h3>
+          <div class="states"><span>Tamil Nadu</span><span>Kerala</span><span>Karnataka</span><span>Andhra Pradesh</span></div>
+          <div class="tmini"><div class="target"><b>3,000</b><span>new leads</span></div></div>
+          <p class="note">One shared list: calls, emails and visits all update the same school record.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-school"/></svg><span>List private schools: <b>name, board (CBSE, ICSE, State) and size</b></span></li>
+          <li><svg class="i"><use href="#i-users"/></svg><span>Add the <b>principal and coordinator</b>, with <b>phone, email and website</b></span></li>
+          <li><svg class="i"><use href="#i-globe"/></svg><span>Tag each school <b>by state</b> (its email segment) and <b>stage</b>: new, contacted, appointment, visited, booked</span></li>
+          <li><svg class="i"><use href="#i-video"/></svg><span>Record the <b>demo video</b></span></li>
+          <li><svg class="i"><use href="#i-chart"/></svg><span>Set up the <b>email tool, Google Analytics and UTM links</b></span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li>Leads with an <b>email</b> and a <b>phone</b></li>
+          <li><b>Duplicate</b> schools removed</li></ul></div>
       </div>
     </article></div></div>
   </section>
 
-  <section class="band" id="b-students" data-num="07" data-title="Upsell">
-    <div class="band-in"><div class="fit"><article class="sec" id="students">
-      <header><span class="badge"><svg class="i"><use href="#i-users"/></svg></span><p class="kicker">Chapter 7 · Upsell</p><h2>From customer school to paying families</h2><p>Every program day is a free trial. Parents convert to the After School subscription.</p></header>
-      <figure><div class="scroll" id="dgStudents"></div></figure>
-    </article></div></div>
-  </section>
-
-  <section class="band" id="b-pitch" data-num="08" data-title="Unit economics">
-    <div class="band-in"><div class="fit"><article class="sec" id="pitch">
-      <header><span class="badge"><svg class="i"><use href="#i-rupee"/></svg></span><p class="kicker">Chapter 8 · Unit economics</p><h2>Revenue, cost and break-even</h2><p>Every number here is an input. Change one and the whole plan updates.</p></header>
-      <div class="calc">
-        <label>Price, ₹ a student<input id="cPrice" type="number" min="0" step="10" value="300"></label>
-        <label>Students a school<input id="cSize" type="number" min="1" step="10" value="200"></label>
-        <label>Salaries, ₹ a month<input id="cStaff" type="number" min="0" step="10000" value="500000"></label>
-        <label>Servers etc., ₹ a month<input id="cOther" type="number" min="0" step="5000" value="50000"></label>
-        <label>Kit + travel, ₹ a student<input id="cKit" type="number" min="0" step="10" value="0"></label>
-        <label>Program days a month<input id="cDays" type="number" min="1" step="1" value="4"></label>
-        <label>Subscription, ₹ a month<input id="cAfter" type="number" min="0" step="100" value="3000"></label>
+  <section class="band" id="b-w2" data-num="4.2.2" data-title="Week 2">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.2 · Week 2 · 9–15 Nov 2026</p><h2>Start Outreach</h2><p>The first weekend campaign, the first social posts, and calls that book the first appointments.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>First Campaign, Posts and Appointments</h3>
+          <div class="states"><span>Sat + Sun emails</span><span>Instagram</span><span>Facebook</span><span>X</span><span>YouTube Shorts</span><span>LinkedIn</span></div>
+          <div class="tmini"><div class="target"><b>500</b><span>emails</span></div><div class="target"><b>1 + 1</b><span>video and image post</span></div><div class="target"><b>250</b><span>calls</span></div><div class="target"><b>100</b><span>appointments booked</span></div></div>
+          <p class="note">Next week's visits are booked this week.</p></div>
+        <div class="panel"><span class="mh">This Week's Activities</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-mail"/></svg><span><a class="sublink" href="#b-email">4.2.2.1 Email Campaigns</a>: every weekend, one segment per state</span></li>
+          <li><svg class="i"><use href="#i-video"/></svg><span><a class="sublink" href="#b-social">4.2.2.2 Social Posts</a>: one video and one image post a week</span></li>
+          <li><svg class="i"><use href="#i-chat"/></svg><span><a class="sublink" href="#b-calls">4.2.2.3 Calls</a>: 50 a day, to book appointments</span></li>
+          <li><svg class="i"><use href="#i-school"/></svg><span><a class="sublink" href="#b-w3">4.2.3 School Visits</a>: 20 a day, by appointment only</span></li></ul>
+          <p class="note">Each activity has its own page.</p></div>
       </div>
-      <div class="results" id="results"></div>
     </article></div></div>
   </section>
 
-  <section class="band" id="b-weeks" data-num="09" data-title="Launch plan">
-    <div class="band-in"><div class="fit"><article class="sec" id="weeks">
-      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 9 · Launch plan</p><h2>The first nine weeks</h2><p>November and December 2026: from the first leads to 10 customer schools.</p></header>
-      <div class="tlbox"><div class="tl2" id="weekGrid" role="list" aria-label="Launch plan, November to December 2026"></div></div>
+  <section class="band" id="b-email" data-num="4.2.2.1" data-title="Email Campaigns">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-mail"/></svg></span><p class="kicker">Chapter 4.2.2.1 · Week 2 · Email Campaigns</p><h2>Email Campaigns Every Weekend</h2><p>Segmented by region and sent on Saturday and Sunday, from week 2 onwards.</p></header>
+      <div class="targets"><div><b>500</b><span>emails a week</span></div><div><b>2,000</b><span>emails a month</span></div><div><b>Sat + Sun</b><span>send days</span></div><div><b>By State</b><span>one segment per state</span></div></div>
+      <div class="three">
+        <div class="panel"><span class="mh">In the Email Tool</span><ul class="dlist">
+          <li><b>Opened</b> and <b>not opened</b>, per state</li>
+          <li><b>Clicked</b>, and which link was clicked</li>
+          <li><b>Bounced</b>: wrong or full inboxes</li>
+          <li><b>Unsubscribed</b> and <b>spam reports</b></li>
+          <li><b>Replies</b> from principals</li></ul></div>
+        <div class="panel"><span class="mh">In Google Analytics</span><ul class="dlist">
+          <li><b>UTM tags</b> on every link: source, medium, campaign</li>
+          <li><b>Users and sessions</b> from each campaign</li>
+          <li><b>Landing pages</b> they read, and for how long</li>
+          <li><b>Key events:</b> demo booking, call or WhatsApp click</li>
+          <li><b>City and region</b> of the visitors</li></ul></div>
+        <div class="panel hot"><span class="mh">Every Monday</span><ul class="dlist">
+          <li>Compare <b>click rate</b> by state</li>
+          <li>Read the <b>clicked links</b>: what interests schools</li>
+          <li><b>A/B test</b> one thing: subject, send time or opening line</li>
+          <li><b>Clean</b> bounced and unsubscribed leads</li>
+          <li>Plan next weekend's <b>segments</b></li></ul></div>
+      </div>
+      <p class="note"><b>Judge by clicks, not opens.</b> Some mail apps mark emails as opened automatically, so the open rate runs high.</p>
+    </article></div></div>
+  </section>
+  <section class="band" id="b-social" data-num="4.2.2.2" data-title="Social Posts">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-video"/></svg></span><p class="kicker">Chapter 4.2.2.2 · Week 2 · Social Posts</p><h2>One Video and One Image Post Every Week</h2><p>Each post goes on every channel: Instagram, Facebook, X (Twitter), YouTube Shorts and LinkedIn.</p></header>
+      <div class="three">
+        <div class="panel"><span class="mh">What We Post</span><ul class="dlist">
+          <li><b>1 video:</b> robots in action, live school demos</li>
+          <li><b>1 image or content post:</b> robot photos, science facts, tips</li>
+          <li><b>Behind the build</b>: kits, trainers, the AI tutor</li>
+          <li><b>Principal and teacher</b> quotes</li>
+          <li>Captions in <b>English and the state's language</b></li></ul></div>
+        <div class="panel"><span class="mh">What We Measure</span><ul class="dlist">
+          <li><b>Reach</b> and <b>impressions</b></li>
+          <li><b>Video:</b> views, average watch time, % watched</li>
+          <li><b>Image post:</b> likes, comments, shares, saves</li>
+          <li><b>Profile visits</b> and <b>link clicks</b> (UTM-tagged)</li>
+          <li><b>Followers by region</b>, <b>DMs</b> and enquiries</li></ul></div>
+        <div class="panel hot"><span class="mh">Senior Marketer Notes</span><ul class="dlist">
+          <li><b>Hook</b> in the first 3 seconds</li>
+          <li>Post when parents are online: <b>evenings and weekends</b></li>
+          <li>Tag the <b>city and state</b> in every post</li>
+          <li>Count <b>enquiries per post</b>, not likes</li>
+          <li>Test a small <b>paid boost</b> of the best post in one state</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+  <section class="band" id="b-calls" data-num="4.2.2.3" data-title="Calls">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-chat"/></svg></span><p class="kicker">Chapter 4.2.2.3 · Week 2 · Calls</p><h2>50 Calls Every Day</h2><p>Every call aims for one thing: an appointment with the principal.</p></header>
+      <div class="three">
+        <div class="panel"><span class="mh">Two Call Lists</span><ul class="dlist">
+          <li><b>New schools</b> from the lead database</li>
+          <li><b>Follow-ups:</b> callbacks, after an email click, after a visit</li>
+          <li>Ask for a <b>20-minute appointment</b> with the principal</li></ul></div>
+        <div class="panel"><span class="mh">Log Every Call</span><ul class="dlist">
+          <li><b>Who answered:</b> principal, coordinator or other</li>
+          <li><b>Outcome:</b> no answer, call back, interested, appointment booked, not interested</li>
+          <li><b>Appointment</b> date and time, or the next call date</li>
+          <li>One line of <b>notes</b></li></ul></div>
+        <div class="panel hot"><span class="mh">Conversions We Watch</span><ul class="dlist">
+          <li><b>Connect rate:</b> calls answered</li>
+          <li><b>Decision-maker</b> reached</li>
+          <li><b>Appointments booked</b> per day</li>
+          <li><b>Follow-ups</b> done on time</li></ul></div>
+      </div>
     </article></div></div>
   </section>
 
-  <section class="band" id="b-months" data-num="10" data-title="Market reach">
+  <section class="band" id="b-w3" data-num="4.2.3" data-title="Week 3">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.3 · Week 3 · 16–22 Nov 2026</p><h2>School Visits: 20 Every Day</h2><p>Only schools with an appointment: confirmed, routed by district, then a live pitch.</p></header>
+      
+        
+      <div class="targets"><div><b>20</b><span>visits a day</span></div><div><b>100</b><span>visits this week</span></div><div><b>100</b><span>appointments for next week</span></div><div><b>2</b><span>schools booked for January</span></div></div>
+      <div class="three">
+        <div class="panel"><span class="mh">1 · Plan the Visits</span><ul class="dlist">
+          <li>Visit only schools with an <b>appointment</b></li>
+          <li><b>Confirm</b> each appointment the day before</li>
+          <li>Group the day's visits <b>by district</b> to fit 20</li></ul></div>
+        <div class="panel hot"><span class="mh">2 · The Live Pitch</span><ul class="dlist">
+          <li>Show a <b>robot and the AI tutor</b> working</li>
+          <li>Explain the <b>One Day Bot</b> program</li>
+          <li>Explain the <b>vouchers</b></li>
+          <li>Leave the <b>brochure and a voucher</b></li></ul></div>
+        <div class="panel"><span class="mh">3 · Log the Outcome</span><ul class="dlist">
+          <li><b>Who we met</b></li>
+          <li><b>Result:</b> interested, proposal asked, booked for January, not now</li>
+          <li>The <b>follow-up call</b> date</li></ul></div>
+      </div>
+      <p class="note"><b>We check:</b> appointments kept, visit to booking, and the objections principals raise.</p>
+
+      
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-w4" data-num="4.2.4" data-title="Week 4">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.4 · Week 4 · 23–29 Nov 2026</p><h2>Content From School Visits</h2><p>The live demos at schools become our marketing content.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>Demo Videos and Follow-Ups</h3>
+          <div class="states"><span>Live demo video</span><span>School permission</span><span>Email follow-ups</span></div>
+          <div class="tmini"><div class="target"><b>1 + 1</b><span>video and image post</span></div><div class="target"><b>500</b><span>emails</span></div><div class="target"><b>2</b><span>schools booked for January</span></div></div>
+          <p class="note">Real schools in our videos from this week on.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-camera"/></svg><span>Film the <b>live robot demo</b> at a school visit, with the school's permission</span></li>
+          <li><svg class="i"><use href="#i-video"/></svg><span>Post it as the <b>week's video</b>; a photo from the visit is the image post</span></li>
+          <li><svg class="i"><use href="#i-chat"/></svg><span><b>Call back</b> every school that clicked an email</span></li>
+          <li><svg class="i"><use href="#i-route"/></svg><span>Keep <b>calls and visits</b> at full pace</span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li><b>Reach and enquiries</b> per video</li>
+          <li>Which <b>email links</b> were clicked</li>
+          <li>Every <b>DM answered</b> within a day</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-w5" data-num="4.2.5" data-title="Week 5">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.5 · Week 5 · 30 Nov–6 Dec 2026</p><h2>Review the Analytics</h2><p>Halfway: read the numbers and improve the campaign.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>Analytics and A/B Testing</h3>
+          <div class="states"><span>Email tool</span><span>Google Analytics</span><span>A/B test</span></div>
+          <div class="tmini"><div class="target"><b>500</b><span>emails</span></div><div class="target"><b>100</b><span>school visits</span></div><div class="target"><b>2</b><span>schools booked for January</span></div></div>
+          <p class="note">Effort moves to what converts best.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-chart"/></svg><span>Compare <b>click rate by state</b></span></li>
+          <li><svg class="i"><use href="#i-globe"/></svg><span>In <b>Google Analytics</b>: sessions, landing pages, demo bookings</span></li>
+          <li><svg class="i"><use href="#i-refresh"/></svg><span><b>A/B test</b> the subject line</span></li>
+          <li><svg class="i"><use href="#i-filter"/></svg><span>Remove <b>bounced and unsubscribed</b> leads</span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li>The <b>best state</b> to focus on</li>
+          <li>The <b>winning subject line</b></li>
+          <li><b>Demo bookings</b> from email</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-w6" data-num="4.2.6" data-title="Week 6">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.6 · Week 6 · 7–13 Dec 2026</p><h2>Grow the Pipeline</h2><p>More appointments from more calls, then visits grouped by district.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>Appointments and District Routes</h3>
+          <div class="states"><span>New leads</span><span>Follow-ups</span><span>By district</span></div>
+          <div class="tmini"><div class="target"><b>250</b><span>calls</span></div><div class="target"><b>100</b><span>school visits</span></div><div class="target"><b>2</b><span>schools booked for January</span></div></div>
+          <p class="note">A full pipeline before the December slowdown.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-chat"/></svg><span>Call <b>new leads and follow-ups</b> every day</span></li>
+          <li><svg class="i"><use href="#i-calendar"/></svg><span>Book <b>appointments</b>, then group visits <b>by district</b></span></li>
+          <li><svg class="i"><use href="#i-rows"/></svg><span>Log every <b>call and visit outcome</b></span></li>
+          <li><svg class="i"><use href="#i-mail"/></svg><span>Send the <b>weekend campaign</b></span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li>Call <b>connect rate</b></li>
+          <li><b>Call to appointment</b> conversion</li>
+          <li><b>Follow-ups</b> done on time</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-w7" data-num="4.2.7" data-title="Week 7">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.7 · Week 7 · 14–20 Dec 2026</p><h2>Proposals and Bookings</h2><p>Turn interested schools into January bookings.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>Close the Bookings</h3>
+          <div class="states"><span>Proposals</span><span>January dates</span><span>Referrals</span></div>
+          <div class="tmini"><div class="target"><b>100</b><span>school visits</span></div><div class="target"><b>2</b><span>schools booked for January</span></div></div>
+          <p class="note">Ten schools booked for January by the end of the week.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-handshake"/></svg><span>Send a <b>proposal</b> to every interested school</span></li>
+          <li><svg class="i"><use href="#i-calendar"/></svg><span>Fix each booked school's <b>January program day</b></span></li>
+          <li><svg class="i"><use href="#i-share"/></svg><span>Ask booked schools to <b>refer</b> a nearby school</span></li>
+          <li><svg class="i"><use href="#i-video"/></svg><span>Post <b>the week's video and image post</b> and send the <b>weekend campaign</b></span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li><b>Proposals</b> sent and answered</li>
+          <li><b>Visit to booking</b> conversion</li>
+          <li><b>Referrals</b> received</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-w8" data-num="4.2.8" data-title="Week 8">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-calendar"/></svg></span><p class="kicker">Chapter 4.2.8 · Week 8 · 21–27 Dec 2026</p><h2>Ready for January</h2><p>Three school days before the break: everything set for the first program days.</p></header>
+      <div class="two">
+        <div class="panel"><span class="mh">Week Focus</span><h3>Launch Preparation</h3>
+          <div class="states"><span>21–23 Dec school days</span><span>Confirmed dates</span><span>Kits and trainers</span></div>
+          <div class="tmini"><div class="target"><b>150</b><span>calls</span></div><div class="target"><b>60</b><span>school visits</span></div></div>
+          <p class="note">Every booked school has a date, a day plan and a trainer team.</p></div>
+        <div class="panel"><span class="mh">What We Do</span><ul class="ilist">
+          <li><svg class="i"><use href="#i-calendar"/></svg><span>Confirm every booked school's <b>January date and grades</b></span></li>
+          <li><svg class="i"><use href="#i-users"/></svg><span>Share the <b>day plan</b> with each coordinator</span></li>
+          <li><svg class="i"><use href="#i-package"/></svg><span>Plan <b>kits and trainer teams</b> for each school</span></li>
+          <li><svg class="i"><use href="#i-mail"/></svg><span>Send the <b>weekend campaign</b> and post <b>the week's video and image post</b></span></li></ul>
+          <span class="mh">What We Check</span><ul class="dlist">
+          <li>Booked schools with a <b>confirmed date</b></li>
+          <li><b>Day plans</b> shared</li>
+          <li><b>Kits and trainers</b> assigned</li></ul></div>
+      </div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-roadmap" data-num="4.2.9" data-title="Eight-Week Roadmap">
+    <div class="band-in"><div class="fit"><article class="sec">
+      <header><span class="badge"><svg class="i"><use href="#i-route"/></svg></span><p class="kicker">Chapter 4.2.9 · Roadmap · Nov–Dec 2026, Launch Jan 2027</p><h2>The Eight-Week Roadmap</h2><p>Eight weeks of marketing, then the first program days in January 2027.</p></header>
+      <div class="rmgrid" role="table" aria-label="Eight-week roadmap: activities by week with weekly targets and totals, then the January 2027 launch"><div class="rm-corner"></div><div class="rm-phase" style="grid-column: 2 / 3">Prepare</div><div class="rm-phase" style="grid-column: 3 / 5">Outreach</div><div class="rm-phase" style="grid-column: 5 / 8">Grow</div><div class="rm-phase" style="grid-column: 8 / 10">Book January</div><div class="rm-phase rm-go">Launch</div><div class="rm-corner"></div><div class="rm-h">Activity</div><a class="rm-week" href="#b-w1"><b>Week 1</b><span>2–8 Nov</span></a><a class="rm-week" href="#b-w2"><b>Week 2</b><span>9–15 Nov</span></a><a class="rm-week" href="#b-w3"><b>Week 3</b><span>16–22 Nov</span></a><a class="rm-week" href="#b-w4"><b>Week 4</b><span>23–29 Nov</span></a><a class="rm-week" href="#b-w5"><b>Week 5</b><span>30 Nov–6 Dec</span></a><a class="rm-week" href="#b-w6"><b>Week 6</b><span>7–13 Dec</span></a><a class="rm-week" href="#b-w7"><b>Week 7</b><span>14–20 Dec</span></a><a class="rm-week" href="#b-w8"><b>Week 8</b><span>21–27 Dec</span></a><div class="rm-week rm-jan"><b>Jan 2027</b><span>program days</span></div><div class="rm-h rm-tot">Total</div><div class="rm-name"><svg class="i"><use href="#i-db"/></svg><span>Lead Database</span></div><div class="rm-cell on c1 first last"><b>3,000</b></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-launch" style="grid-row: 3 / 10"><svg class="i"><use href="#i-rocket"/></svg><b>First Program Days</b><span>at every school booked for January</span></div><div class="rm-total">3,000</div><div class="rm-name"><svg class="i"><use href="#i-mail"/></svg><span>Email Campaigns</span></div><div class="rm-cell"></div><div class="rm-cell on c2 first"><b>500</b></div><div class="rm-cell on c2"><b>500</b></div><div class="rm-cell on c2"><b>500</b></div><div class="rm-cell on c2"><b>500</b></div><div class="rm-cell on c2"><b>500</b></div><div class="rm-cell on c2"><b>500</b></div><div class="rm-cell on c2 last"><b>500</b></div><div class="rm-total">3,500</div><div class="rm-name"><svg class="i"><use href="#i-video"/></svg><span>Social Posts</span></div><div class="rm-cell"></div><div class="rm-cell on c3 first"><b>1 + 1</b></div><div class="rm-cell on c3"><b>1 + 1</b></div><div class="rm-cell on c3"><b>1 + 1</b></div><div class="rm-cell on c3"><b>1 + 1</b></div><div class="rm-cell on c3"><b>1 + 1</b></div><div class="rm-cell on c3"><b>1 + 1</b></div><div class="rm-cell on c3 last"><b>1 + 1</b></div><div class="rm-total">7 + 7</div><div class="rm-name"><svg class="i"><use href="#i-chat"/></svg><span>Calls</span></div><div class="rm-cell"></div><div class="rm-cell on c4 first"><b>250</b></div><div class="rm-cell on c4"><b>250</b></div><div class="rm-cell on c4"><b>250</b></div><div class="rm-cell on c4"><b>250</b></div><div class="rm-cell on c4"><b>250</b></div><div class="rm-cell on c4"><b>250</b></div><div class="rm-cell on c4 last"><b>150</b></div><div class="rm-total">1,650</div><div class="rm-name"><svg class="i"><use href="#i-calendar"/></svg><span>Appointments</span></div><div class="rm-cell"></div><div class="rm-cell on c7 first"><b>100</b></div><div class="rm-cell on c7"><b>100</b></div><div class="rm-cell on c7"><b>100</b></div><div class="rm-cell on c7"><b>100</b></div><div class="rm-cell on c7"><b>100</b></div><div class="rm-cell on c7 last"><b>60</b></div><div class="rm-cell"></div><div class="rm-total">560</div><div class="rm-name"><svg class="i"><use href="#i-school"/></svg><span>School Visits</span></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell on c5 first"><b>100</b></div><div class="rm-cell on c5"><b>100</b></div><div class="rm-cell on c5"><b>100</b></div><div class="rm-cell on c5"><b>100</b></div><div class="rm-cell on c5"><b>100</b></div><div class="rm-cell on c5 last"><b>60</b></div><div class="rm-total">560</div><div class="rm-name"><svg class="i"><use href="#i-trophy"/></svg><span>Schools Booked</span></div><div class="rm-cell"></div><div class="rm-cell"></div><div class="rm-cell on c6 first"><b>2</b></div><div class="rm-cell on c6"><b>2</b></div><div class="rm-cell on c6"><b>2</b></div><div class="rm-cell on c6"><b>2</b></div><div class="rm-cell on c6 last"><b>2</b></div><div class="rm-cell"></div><div class="rm-total">10</div></div>
+    </article></div></div>
+  </section>
+
+  <section class="band" id="b-months" data-num="4.3" data-title="Market Reach">
     <div class="band-in"><div class="fit"><article class="sec" id="months">
-      <header><span class="badge"><svg class="i"><use href="#i-chart"/></svg></span><p class="kicker">Chapter 10 · Market reach</p><h2>The year ahead</h2><p>Term time grows the reach; exams and holidays slow it down.</p></header>
+      <header><span class="badge"><svg class="i"><use href="#i-chart"/></svg></span><p class="kicker">Chapter 4.3 · Market Reach</p><h2>The Year Ahead</h2><p>From the first program days in January 2027: term time grows the reach; exams and holidays slow it down.</p></header>
       <figure>
-        <div class="fig-top"><div class="legend"><span><i style="background:var(--s1)"></i>Students reached</span><span><i style="background:var(--s4)"></i>Exam or holiday month</span></div>
+        <div class="fig-top"><div class="legend"><span><i style="background:var(--s1)"></i>Students Reached</span><span><i style="background:var(--s4)"></i>Exam or Holiday Month</span></div>
           <div class="ystats" id="yearResults"></div>
           <div class="seg" id="mSeg" role="group" aria-label="View"><button type="button" data-view="chart" aria-pressed="true">Chart</button><button type="button" data-view="table" aria-pressed="false">Table</button></div></div>
         <div id="chMonths"></div>
-        <div class="mtable" id="mTable" hidden><table><thead><tr><th>Month</th><th>School calendar</th><th class="n">Customer schools</th><th class="n">Program weeks</th><th class="n">Students</th></tr></thead><tbody id="monthRows"></tbody></table></div>
+        <div class="mtable" id="mTable" hidden><table><thead><tr><th>Month</th><th>School calendar</th><th class="n">Schools</th><th class="n">Program weeks</th><th class="n">Students</th></tr></thead><tbody id="monthRows"></tbody></table></div>
       </figure>
     </article></div></div>
   </section>
@@ -910,7 +1289,10 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
   function el(tag, attrs, parent, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
   var inr = function (n) { return "₹" + Math.round(n).toLocaleString("en-IN"); };
   var lakh = function (n) { return "₹" + (n / 100000).toFixed(n % 100000 ? 1 : 0) + "L"; };
-  var num = function (id) { var v = parseFloat(document.getElementById(id).value); return isFinite(v) && v >= 0 ? v : 0; };
+  var DEF = { cPrice: 300, cSize: 200, cStaff: 500000, cOther: 50000, cKit: 0, cDays: 4, cAfter: 3000 };
+  var num = function (id) { var e = document.getElementById(id), v = parseFloat(e ? e.value : DEF[id]); return isFinite(v) && v >= 0 ? v : 0; };
+  var MINOR = /^(a|an|the|and|or|but|for|nor|of|on|in|to|at|by|with|from|per|via|vs|as)$/i;
+  var tc = function (t) { var first = true; return String(t).replace(/[A-Za-z][A-Za-z’-]*/g, function (w) { var o = !first && MINOR.test(w) ? w.toLowerCase() : (w === w.toLowerCase() ? w.charAt(0).toUpperCase() + w.slice(1) : w); first = false; return o; }); };
   var setText = function (id, t) { var e = document.getElementById(id); if (e) e.textContent = t; };
 
   function diagram(hostId, w, h, label, build) {
@@ -927,12 +1309,12 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
         if (o.w >= 180) {
           el("rect", { class: "ibg", x: o.x + 12, y: cy - 17, width: 34, height: 34, rx: 9 }, g);
           el("use", { class: "ic", href: "#i-" + o.icon, x: o.x + 18, y: cy - 11, width: 22, height: 22 }, g);
-          el("text", { x: o.x + 58, y: cy - 3 }, g, o.t);
+          el("text", { x: o.x + 58, y: cy - 3 }, g, tc(o.t));
           if (o.s) el("text", { class: "sub", x: o.x + 58, y: cy + 14 }, g, o.s);
         } else {
           el("rect", { class: "ibg", x: cx - 16, y: o.y + 10, width: 32, height: 32, rx: 9 }, g);
           el("use", { class: "ic", href: "#i-" + o.icon, x: cx - 11, y: o.y + 15, width: 22, height: 22 }, g);
-          el("text", { x: cx, y: o.y + 60, "text-anchor": "middle" }, g, o.t);
+          el("text", { x: cx, y: o.y + 60, "text-anchor": "middle" }, g, tc(o.t));
           if (o.s) el("text", { class: "sub", x: cx, y: o.y + 77, "text-anchor": "middle" }, g, o.s);
         }
       },
@@ -941,20 +1323,20 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     });
   }
 
-  diagram("dgDay", 1000, 268, "A Bot Program day: sign in, meet the tutor, meet the robot, science experiment, build, program and test, showcase with certificate; the tutor, doubts check, XP and photos are always on.", function (d) {
+  diagram("dgDay", 1000, 150, "A Bot Program day: sign in, meet the tutor, meet the robot, science experiment, build, program and test, showcase with certificate; the tutor, doubts check, XP and photos are always on.", function (d) {
     d.lane(5, 6, 990, 140, "ONE DAY, ONE ROBOT");
-    var N = [["user", "Sign in", "class code"], ["users", "Meet your tutor", "Talk or Tap"], ["robot", "Meet the robot", "parts and story"], ["bolt", "Science lab", "try an experiment"], ["package", "Build it", "step by step", "hot"], ["code", "Program + test", "make it move"], ["trophy", "Showcase", "certificate", "hot"]];
+    var N = [["user", "Sign in", "class code"], ["users", "Pick an AI tutor", "interactive AI"], ["robot", "Choose a robot", "from its level"], ["bolt", "Science", "try experiments"], ["package", "Build it", "step by step", "hot"], ["code", "Program + test", "make it move"], ["trophy", "Showcase", "certificate", "hot"]];
     N.forEach(function (n, i) { var x = 12 + i * 141; d.node({ x: x, y: 38, w: 130, h: 92, icon: n[0], t: n[1], s: n[2], kind: n[3] }); if (i) d.edge("M" + (x - 11) + " 84 H" + (x - 2)); });
     d.packet("M160 30 H923", 7);
-    d.lane(5, 160, 990, 100, "ALWAYS ON");
-    [["chat", "Ask the tutor", "voice or typing"], ["question", "Any doubts?", "after every step"], ["star", "XP and medals", "earned all day"], ["camera", "Photographs", "with parent consent"], ["cloud", "Upload work", "with parent consent"]].forEach(function (n, i) { d.node({ x: 12 + i * 197, y: 190, w: 186, h: 58, icon: n[0], t: n[1], s: n[2] }); });
+    
+    
   });
 
-  diagram("dgLeads", 1000, 312, "Lead to school: lead list of 3,000, all emailed, 600 called, 60 school visits, 25 proposals, 10 weekly schools by week 8; then program day, results shared, weekly program and a referral that becomes a new lead.", function (d) {
+  diagram("dgLeads", 1000, 312, "Sales funnel: leads, outreach, qualify, opportunity, proposal and won; then onboarding, results shared, retention, and a referral that becomes a new lead.", function (d) {
     d.lane(5, 6, 990, 160, "SALES FUNNEL");
-    var xs = [14, 179, 344, 509, 674, 839], N = [["search", "Leads", "private schools"], ["mail", "Outreach", "week 1 · email"], ["chat", "Qualify", "week 1 · phone call"], ["school", "Opportunity", "week 1 · school visit", "hot"], ["handshake", "Proposal", "week 2"], ["calendar", "Won", "week 2 · customer", "hot"]];
+    var xs = [14, 179, 344, 509, 674, 839], N = [["search", "Leads", "South India"], ["mail", "Outreach", "week 1 · email"], ["chat", "Qualify", "week 1 · phone call"], ["school", "Opportunity", "week 1 · school visit", "hot"], ["handshake", "Proposal", "week 2"], ["calendar", "Won", "week 2 · customer", "hot"]];
     var C = ["3,000 leads", "3,000 emailed", "600 called", "60 opportunities", "25 proposals", "10 customers"];
-    N.forEach(function (n, i) { d.node({ x: xs[i], y: 32, w: 145, h: 92, icon: n[0], t: n[1], s: n[2], kind: n[3] }); if (i) d.edge("M" + (xs[i - 1] + 145) + " 78 H" + (xs[i] - 2)); d.text(xs[i] + 72, 146, C[i], "lanelbl"); });
+    N.forEach(function (n, i) { d.node({ x: xs[i], y: 32, w: 145, h: 92, icon: n[0], t: n[1], s: n[2], kind: n[3] }); if (i) d.edge("M" + (xs[i - 1] + 145) + " 78 H" + (xs[i] - 2));  });
     d.edge("M985 78 H993 V176 H200 V206");
     d.lane(5, 182, 990, 98, "ONBOARD AND RETAIN");
     [["robot", "Onboarding", "first program day"], ["chart", "Results shared", "report to the principal"], ["refresh", "Retention", "a program day every week", "hot"], ["share", "Referral", "a new lead from a customer"]].forEach(function (n, i) { var x = 14 + i * 247; d.node({ x: x, y: 208, w: 232, h: 60, icon: n[0], t: n[1], s: n[2], kind: n[3] }); if (i) d.edge("M" + (x - 13) + " 238 H" + (x - 2)); });
@@ -965,7 +1347,8 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
   /* ---------- levels, orchestration, After School path, student approach ---------- */
   /* the app's catalogue (src/content/models.ts): name, category, level, hook, full lessons live, slug */
   var BOTS = [["V6 Engine","engines",3,"Six cylinders in a V, turning fuel into spinning power.",0,"v6"],["6 DOF Robotic Arm","pods",4,"Six joints that reach, twist and grip.",0,"arm6"],["Hand Tracking Robot","bots",3,"A robot hand that copies your fingers through a camera.",0,"hand"],["StrandBeest","pods",1,"A wind-powered walker made of clever linkages.",0,"strandbeest"],["Robotic Head","bots",4,"A head that turns, tilts and looks around with servos.",0,"head"],["Animatronic Eyes","bots",1,"Eyes that glance and blink like real ones.",0,"eyes"],["Octa-Pod","pods",1,"Eight legs walking in rhythm, driven by just two motors.",1,"octapod"],["Sweeper","vehicles",1,"Push it and gears spin a brush that sweeps the floor clean.",1,"sweeper"],["Bi-Ped Walker","pods",2,"A two-legged walker inspired by your own stride.",0,"biped"],["Torsion Boat","vehicles",1,"A wind-up spring spins its propeller.",0,"boat"],["Tower Crane","industrial",1,"Lifts heavy loads without tipping over.",0,"crane"],["Motorized Pump","motors",1,"A motor spins an impeller to move water.",0,"pump"],["Car with Arm","vehicles",2,"A rover with a robot arm on its back.",0,"cararm"],["Drone","drones",3,"Four rotors that balance it in the air.",0,"drone"],["Colour Sorting Conveyor","industrial",2,"Spots colours and sorts objects into bins.",0,"conveyor"],["AI Desk-Bot","bots",3,"A desktop buddy that listens, looks and responds.",0,"deskbot"],["FPV Drone","drones",1,"A racing drone you fly through its own camera's eyes.",0,"fpv-drone"],["Nano Drone","drones",1,"A palm-sized quadcopter light enough to fly indoors.",0,"nano-drone"],["Mono Copter","drones",2,"One spinning wing lifts the whole craft, like a maple seed.",0,"mono-copter"],["Seed Sowing Drone","drones",2,"A farm drone that drops seeds from the sky in neat rows.",0,"seed-drone"],["VTOL","drones",3,"Takes off straight up like a drone, then flies like a plane.",0,"vtol"],["Hybrid VTOL","drones",4,"Rotors to lift and wings to glide, for long, fast flights.",0,"hybrid-vtol"],["High Speed Drone","drones",4,"A streamlined drone built for pure speed.",0,"speed-drone"],["Radial Engine","engines",1,"Cylinders arranged in a star, like old aeroplane engines.",0,"radial-engine"],["Turbo Jet Engine","engines",1,"Sucks in air, squeezes it and blasts it out to push a jet.",0,"turbojet"],["Inline 4 Engine","engines",2,"Four cylinders in a row: the engine in most family cars.",0,"inline-4"],["Boxer Engine","engines",2,"Its pistons punch out sideways in pairs, like boxers.",0,"boxer-engine"],["Rotary Engine","engines",3,"A spinning triangle rotor instead of pistons going up and down.",0,"rotary-engine"],["V12 Engine","engines",4,"Twelve cylinders in a V for supercar power.",0,"v12"],["Raptor Rocket Engine","engines",4,"Burns fuel and oxygen to roar a rocket into space.",0,"raptor"],["3 Jaw Claw","industrial",1,"Three fingers close together to grab and lift.",0,"claw"],["Modular Conveyor","industrial",2,"Snap belt sections together to move parts anywhere.",0,"modular-conveyor"],["Wind Tunnel","industrial",3,"Blows steady air past models to test their shape.",0,"wind-tunnel"],["Mini Lathe","industrial",3,"Spins a block so a cutter can shape it round.",0,"mini-lathe"],["Mini CNC","industrial",4,"A computer guides the cutter to carve exact shapes.",0,"mini-cnc"],["Milling Machine","industrial",4,"A spinning cutter slides on rails to shape wood and metal.",0,"milling-machine"],["Launch Station","balancing",1,"Holds a rocket steady and upright, ready for lift-off.",0,"launch-station"],["FPV Balance Bot","balancing",1,"Two wheels, one camera, and it never falls over.",0,"fpv-balance-bot"],["Self Balancing Cube","balancing",2,"A cube that stands on one corner using spinning wheels inside.",0,"balance-cube"],["Mono Wheel Bot","balancing",2,"Balances and rolls along on a single wheel.",0,"mono-wheel"],["Balancing Platform","balancing",3,"Tilts itself to keep a ball balanced in the middle.",0,"balancing-platform"],["Universal Plotter","balancing",3,"Moves a pen to draw any picture you give it.",0,"plotter"],["Gyro Gimbal","balancing",4,"Spinning rings that hold a camera perfectly steady.",0,"gyro-gimbal"],["Wheel Balancer","balancing",4,"Finds the heavy spot on a wheel so it spins smoothly.",0,"wheel-balancer"],["Gear Walker","pods",2,"Gears turn into steps for a slow, steady walk.",0,"gear-walker"],["Hexa-Pod","pods",3,"Six legs, three always on the ground, for a steady walk.",0,"hexapod"],["Spine Bot","pods",3,"A bendy spine that wriggles it along like a snake.",0,"spine-bot"],["AI Dog","pods",4,"A four-legged robot dog that walks, sits and plays.",0,"ai-dog"],["Hydraulic Excavator","vehicles",1,"Liquid pushes pistons to dig and lift with its arm.",0,"excavator"],["Omni Wheel Car","vehicles",2,"Special wheels let it glide sideways as well as forward.",0,"omni-wheel"],["All Terrain Vehicle","vehicles",3,"Big wheels and springy legs to roll over rough ground.",0,"atv"],["Hovercraft","vehicles",3,"Floats on a cushion of air over land and water.",0,"hovercraft"],["Tanker","vehicles",4,"Caterpillar tracks spread its weight to roll over anything.",0,"tanker"],["Mars Rover","vehicles",4,"Six wheels to explore rocky ground, just like on Mars.",0,"mars-rover"],["Animatronic Eyes V2","bots",1,"Smoother eyes with eyelids that blink and look around.",0,"eyes-v2"],["Milo","bots",2,"A friendly little robot that rolls around and reacts to you.",0,"milo"],["Voice Assisted Dog","bots",2,"A robot dog that listens and follows your voice.",0,"voice-dog"],["Humanoid Head and Hand","bots",4,"A robot face and hand that move together like a person.",0,"humanoid"],["Gear Construction Set","gears",1,"Mix and match gears to see how speed and strength change.",0,"gear-set"],["Galileo Gear Train","gears",1,"A tower of gears that slows a fast turn right down.",0,"galileo-gears"],["Motorized Planetary Axis","gears",2,"Gears carry the planets round the Sun, each at its own speed.",0,"planetary"],["Tri Axis Tourbillon","gears",2,"A watch part that spins in three directions at once.",0,"tourbillon"],["Mechanical Arm","gears",3,"Gears and levers move a jointed arm.",0,"mech-arm"],["Manual Transmission Box","gears",3,"Shift between gears, just like in a real car.",0,"manual-gearbox"],["Automatic Gearbox","gears",4,"Changes gear by itself as the speed changes.",0,"auto-gearbox"],["Jumping Gear Mechanism","gears",4,"Gears store up energy, then let it go in one jump.",0,"jumping-gear"],["Stator and Rotor","motors",1,"See inside a motor: magnets and coils that make it spin.",0,"stator-rotor"],["Solenoid Motor","motors",2,"Electromagnets pull a rod back and forth to turn a wheel.",0,"solenoid-motor"],["DC Motor Core","motors",2,"Build the heart of a DC motor, coil by coil.",0,"dc-motor"],["3 Phase Motor","motors",3,"Three sets of coils take turns to spin it smoothly.",0,"three-phase"],["Sub Motor Pump","motors",3,"A sealed motor pump that works underwater.",0,"sub-pump"],["Gas Powered Motor","motors",4,"Burning fuel pushes a piston to turn the wheel.",0,"gas-motor"],["Rocket Motor","motors",4,"Hot gas rushes out of the back and pushes it forward.",0,"rocket-motor"],["Hydro-Power Plant","power",1,"Falling water spins a wheel to make electricity.",0,"hydro-plant"],["Wind Mill","power",1,"The wind turns its blades to make power.",0,"windmill"],["Wind Powered Water Station","power",2,"Wind power pumps water up from below.",0,"wind-water"],["Hand Crank Generator","power",2,"Turn the handle and light a lamp with your own power.",0,"crank-generator"],["Ionic Wind Generator","power",3,"High voltage makes the air move, with no moving parts.",0,"ionic-wind"],["V Gate Magnetic Generator","power",3,"Magnets set in a V keep a rotor turning.",0,"vgate"],["Tesla Coil","power",4,"Builds up huge voltages that make sparks leap through the air.",0,"tesla-coil"],["Vertical Axis Wind Turbine","power",4,"Its blades spin round an upright pole, whatever way the wind blows.",0,"vawt"]];
-  var BOT_IMG = {"v6":"/assets/learning-marketing/img-09.webp","arm6":"/assets/learning-marketing/img-10.webp","hand":"/assets/learning-marketing/img-11.webp","strandbeest":"/assets/learning-marketing/img-12.webp","head":"/assets/learning-marketing/img-13.webp","eyes":"/assets/learning-marketing/img-14.webp","octapod":"/assets/learning-marketing/img-15.webp","sweeper":"/assets/learning-marketing/img-16.webp","biped":"/assets/learning-marketing/img-17.webp","boat":"/assets/learning-marketing/img-18.webp","crane":"/assets/learning-marketing/img-19.webp","pump":"/assets/learning-marketing/img-20.webp","cararm":"/assets/learning-marketing/img-21.webp","drone":"/assets/learning-marketing/img-22.webp","conveyor":"/assets/learning-marketing/img-23.webp","deskbot":"/assets/learning-marketing/img-24.webp","fpv-drone":"/assets/learning-marketing/img-25.webp","nano-drone":"/assets/learning-marketing/img-26.webp","mono-copter":"/assets/learning-marketing/img-27.webp","seed-drone":"/assets/learning-marketing/img-28.webp","vtol":"/assets/learning-marketing/img-29.webp","hybrid-vtol":"/assets/learning-marketing/img-30.webp","speed-drone":"/assets/learning-marketing/img-31.webp","radial-engine":"/assets/learning-marketing/img-32.webp","turbojet":"/assets/learning-marketing/img-33.webp","inline-4":"/assets/learning-marketing/img-34.webp","boxer-engine":"/assets/learning-marketing/img-35.webp","rotary-engine":"/assets/learning-marketing/img-36.webp","v12":"/assets/learning-marketing/img-37.webp","raptor":"/assets/learning-marketing/img-38.webp","claw":"/assets/learning-marketing/img-39.webp","modular-conveyor":"/assets/learning-marketing/img-40.webp","wind-tunnel":"/assets/learning-marketing/img-41.webp","mini-lathe":"/assets/learning-marketing/img-42.webp","mini-cnc":"/assets/learning-marketing/img-43.webp","milling-machine":"/assets/learning-marketing/img-44.webp","launch-station":"/assets/learning-marketing/img-45.webp","fpv-balance-bot":"/assets/learning-marketing/img-46.webp","balance-cube":"/assets/learning-marketing/img-47.webp","mono-wheel":"/assets/learning-marketing/img-48.webp","balancing-platform":"/assets/learning-marketing/img-49.webp","plotter":"/assets/learning-marketing/img-50.webp","gyro-gimbal":"/assets/learning-marketing/img-51.webp","wheel-balancer":"/assets/learning-marketing/img-52.webp","gear-walker":"/assets/learning-marketing/img-53.webp","hexapod":"/assets/learning-marketing/img-54.webp","spine-bot":"/assets/learning-marketing/img-55.webp","ai-dog":"/assets/learning-marketing/img-56.webp","excavator":"/assets/learning-marketing/img-57.webp","omni-wheel":"/assets/learning-marketing/img-58.webp","atv":"/assets/learning-marketing/img-59.webp","hovercraft":"/assets/learning-marketing/img-60.webp","tanker":"/assets/learning-marketing/img-61.webp","mars-rover":"/assets/learning-marketing/img-62.webp","eyes-v2":"/assets/learning-marketing/img-63.webp","milo":"/assets/learning-marketing/img-64.webp","voice-dog":"/assets/learning-marketing/img-65.webp","humanoid":"/assets/learning-marketing/img-66.webp","gear-set":"/assets/learning-marketing/img-67.webp","galileo-gears":"/assets/learning-marketing/img-68.webp","planetary":"/assets/learning-marketing/img-69.webp","tourbillon":"/assets/learning-marketing/img-70.webp","mech-arm":"/assets/learning-marketing/img-71.webp","manual-gearbox":"/assets/learning-marketing/img-72.webp","auto-gearbox":"/assets/learning-marketing/img-73.webp","jumping-gear":"/assets/learning-marketing/img-74.webp","stator-rotor":"/assets/learning-marketing/img-75.webp","solenoid-motor":"/assets/learning-marketing/img-76.webp","dc-motor":"/assets/learning-marketing/img-77.webp","three-phase":"/assets/learning-marketing/img-78.webp","sub-pump":"/assets/learning-marketing/img-79.webp","gas-motor":"/assets/learning-marketing/img-80.webp","rocket-motor":"/assets/learning-marketing/img-81.webp","hydro-plant":"/assets/learning-marketing/img-82.webp","windmill":"/assets/learning-marketing/img-83.webp","wind-water":"/assets/learning-marketing/img-84.webp","crank-generator":"/assets/learning-marketing/img-85.webp","ionic-wind":"/assets/learning-marketing/img-86.webp","vgate":"/assets/learning-marketing/img-87.webp","tesla-coil":"/assets/learning-marketing/img-88.webp","vawt":"/assets/learning-marketing/img-89.webp"};
+  var BOT_IMG = {"v6":"/assets/learning-marketing/img-10.webp","arm6":"/assets/learning-marketing/img-11.webp","hand":"/assets/learning-marketing/img-12.webp","strandbeest":"/assets/learning-marketing/img-13.webp","head":"/assets/learning-marketing/img-14.webp","eyes":"/assets/learning-marketing/img-15.webp","octapod":"/assets/learning-marketing/img-16.webp","sweeper":"/assets/learning-marketing/img-17.webp","biped":"/assets/learning-marketing/img-18.webp","boat":"/assets/learning-marketing/img-19.webp","crane":"/assets/learning-marketing/img-20.webp","pump":"/assets/learning-marketing/img-21.webp","cararm":"/assets/learning-marketing/img-22.webp","drone":"/assets/learning-marketing/img-23.webp","conveyor":"/assets/learning-marketing/img-24.webp","deskbot":"/assets/learning-marketing/img-25.webp","fpv-drone":"/assets/learning-marketing/img-26.webp","nano-drone":"/assets/learning-marketing/img-27.webp","mono-copter":"/assets/learning-marketing/img-28.webp","seed-drone":"/assets/learning-marketing/img-29.webp","vtol":"/assets/learning-marketing/img-30.webp","hybrid-vtol":"/assets/learning-marketing/img-31.webp","speed-drone":"/assets/learning-marketing/img-32.webp","radial-engine":"/assets/learning-marketing/img-33.webp","turbojet":"/assets/learning-marketing/img-34.webp","inline-4":"/assets/learning-marketing/img-35.webp","boxer-engine":"/assets/learning-marketing/img-36.webp","rotary-engine":"/assets/learning-marketing/img-37.webp","v12":"/assets/learning-marketing/img-38.webp","raptor":"/assets/learning-marketing/img-39.webp","claw":"/assets/learning-marketing/img-40.webp","modular-conveyor":"/assets/learning-marketing/img-41.webp","wind-tunnel":"/assets/learning-marketing/img-42.webp","mini-lathe":"/assets/learning-marketing/img-43.webp","mini-cnc":"/assets/learning-marketing/img-44.webp","milling-machine":"/assets/learning-marketing/img-45.webp","launch-station":"/assets/learning-marketing/img-46.webp","fpv-balance-bot":"/assets/learning-marketing/img-47.webp","balance-cube":"/assets/learning-marketing/img-48.webp","mono-wheel":"/assets/learning-marketing/img-49.webp","balancing-platform":"/assets/learning-marketing/img-50.webp","plotter":"/assets/learning-marketing/img-51.webp","gyro-gimbal":"/assets/learning-marketing/img-52.webp","wheel-balancer":"/assets/learning-marketing/img-53.webp","gear-walker":"/assets/learning-marketing/img-54.webp","hexapod":"/assets/learning-marketing/img-55.webp","spine-bot":"/assets/learning-marketing/img-56.webp","ai-dog":"/assets/learning-marketing/img-57.webp","excavator":"/assets/learning-marketing/img-58.webp","omni-wheel":"/assets/learning-marketing/img-59.webp","atv":"/assets/learning-marketing/img-60.webp","hovercraft":"/assets/learning-marketing/img-61.webp","tanker":"/assets/learning-marketing/img-62.webp","mars-rover":"/assets/learning-marketing/img-63.webp","eyes-v2":"/assets/learning-marketing/img-64.webp","milo":"/assets/learning-marketing/img-65.webp","voice-dog":"/assets/learning-marketing/img-66.webp","humanoid":"/assets/learning-marketing/img-67.webp","gear-set":"/assets/learning-marketing/img-68.webp","galileo-gears":"/assets/learning-marketing/img-69.webp","planetary":"/assets/learning-marketing/img-70.webp","tourbillon":"/assets/learning-marketing/img-71.webp","mech-arm":"/assets/learning-marketing/img-72.webp","manual-gearbox":"/assets/learning-marketing/img-73.webp","auto-gearbox":"/assets/learning-marketing/img-74.webp","jumping-gear":"/assets/learning-marketing/img-75.webp","stator-rotor":"/assets/learning-marketing/img-76.webp","solenoid-motor":"/assets/learning-marketing/img-77.webp","dc-motor":"/assets/learning-marketing/img-78.webp","three-phase":"/assets/learning-marketing/img-79.webp","sub-pump":"/assets/learning-marketing/img-80.webp","gas-motor":"/assets/learning-marketing/img-81.webp","rocket-motor":"/assets/learning-marketing/img-82.webp","hydro-plant":"/assets/learning-marketing/img-83.webp","windmill":"/assets/learning-marketing/img-84.webp","wind-water":"/assets/learning-marketing/img-85.webp","crank-generator":"/assets/learning-marketing/img-86.webp","ionic-wind":"/assets/learning-marketing/img-87.webp","vgate":"/assets/learning-marketing/img-88.webp","tesla-coil":"/assets/learning-marketing/img-89.webp","vawt":"/assets/learning-marketing/img-90.webp"};
+  BOTS = BOTS.filter(function (b) { return b[0] !== "Animatronic Eyes V2"; });
   var LEVELS = [["Tinker Bay", "First builds: simple machines, quick wins"], ["Maker Deck", "More parts, more moves"], ["Inventor Lab", "Clever machines that balance, fly and think"], ["Legend Forge", "The toughest builds, for true engineers"]];
   var CATS = { drones: ["Drones", "#4A90E2"], engines: ["Engines", "#FF8A3D"], industrial: ["Industrial machines", "#D99A1E"], balancing: ["Balancing bots", "#19B5A5"], pods: ["Walking pods", "#3BB273"], vehicles: ["Vehicles", "#5B6FD6"], bots: ["Bots", "#8C7AF0"], gears: ["Gear ratios", "#D9534F"], motors: ["Motors", "#2BA3C9"], power: ["Power generators", "#E5B800"] };
   var PER_MONTH = 3, SESSIONS = 6;
@@ -997,7 +1380,7 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
       panel.textContent = "";
       var top = mk("div", "lpanel-top", null, panel), head = mk("div", "lhead", null, top);
       mk("h3", null, "Level " + (lvl + 1) + " · " + LEVELS[lvl][0], head);
-      var lp = mk("p", null, LEVELS[lvl][1] + " · " + list.length + " bots · ", head); var k1 = mk("span", "key k1", "Week", lp); lp.appendChild(document.createTextNode(" in One Day Bot · ")); var k2 = mk("span", "key k2", "Month", lp); lp.appendChild(document.createTextNode(" in After School"));
+      var lp = mk("p", null, LEVELS[lvl][1] + " · " + list.length + " bots · ", head); mk("span", "key k1", "Week", lp); lp.appendChild(document.createTextNode(" = its week in the program"));
       var nav = mk("div", "pg", null, top), prev = mk("button", "pg-btn", null, nav), count = mk("span", "car-count", null, nav), next = mk("button", "pg-btn", null, nav);
       prev.type = next.type = "button"; prev.setAttribute("aria-label", "Previous bots"); next.setAttribute("aria-label", "Next bots");
       prev.innerHTML = ARROW_L; next.innerHTML = ARROW_R;
@@ -1019,7 +1402,6 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
         mk("p", null, x[3], c);
         var tags = mk("div", "bot-tags", null, c);
         mk("span", "tag1", "Week " + x.week, tags);
-        mk("span", "tag2", "Month " + x.month, tags);
       });
       var bar = mk("div", "car-bar", null, panel), fill = mk("i", null, null, bar);
       fill.style.width = Math.min(100, per / list.length * 100) + "%"; fill.style.left = (from / list.length * 100) + "%";
@@ -1094,8 +1476,6 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
   ];
   /* [month, weekly schools, program weeks, calendar note, quiet?, fixed student-days from the weekly plan] */
   var MONTHS = [
-    ["Nov 2026", 0, 2, "Term 2 · Children's Day 14 Nov", false, 1200],
-    ["Dec 2026", 0, 4, "Some term exams · winter break from ~24 Dec", false, 6800],
     ["Jan 2027", 10, 4, "Schools reopen · prime season", false],
     ["Feb 2027", 12, 3, "Annual exams begin · Science Day 28 Feb", true],
     ["Mar 2027", 12, 1, "Annual exams and results", true],
@@ -1114,23 +1494,23 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
   /* weekly timeline: what we do each week, cards above and below one line (no money shown) */
   var DO = [
     [["search", "Build the lead list"], ["video", "Record the demo video"]],
-    [["video", "First weekly video post"], ["mail", "First email to all leads"]],
+    [["video", "First two video posts"], ["mail", "First email campaign"]],
     [["school", "First 2 customers"], ["school", "School visits to opportunities"]],
     [["school", "4 customers · 2 new"], ["camera", "Video of a real school day"]],
-    [["school", "6 customers · 2 new"], ["target", "Break-even week"]],
+    [["school", "6 customers · 2 new"], ["mail", "Weekend email campaign"]],
     [["school", "8 customers · 2 new"], ["chat", "Daily calls to new leads"]],
     [["school", "10 customers · 2 new"], ["chart", "Results to principals"]],
     [["trophy", "All 10 customers running"], ["calendar", "Renewals for January"]],
     [["calendar", "Winter break"], ["route", "Plan the new term"]]
   ];
   function weeksGantt(net, cost) {
-    var grid = document.getElementById("weekGrid"); grid.textContent = "";
+    var grid = document.getElementById("weekGrid"); if (!grid) return; grid.textContent = "";
     var be = breakEven(net, cost);
     var put = function (node, col, row) { node.style.gridColumn = col; node.style.gridRow = row; grid.appendChild(node); };
     [["November 2026", "2 / 10"], ["December 2026", "10 / 20"]].forEach(function (m) { var d = document.createElement("div"); d.className = "tl-month"; d.textContent = m[0]; put(d, m[1], "1"); });
     var line = document.createElement("div"); line.className = "tl-line"; line.style.background = "linear-gradient(90deg, var(--s1) 0%, var(--s1) 88%, var(--line-strong) 88%)"; put(line, "3 / 19", "3");
     WEEKS.forEach(function (w, wi) {
-      var up = wi % 2 === 0, kind = w[5] === "prop" ? " prop" : "", live = w[3] ? " live" : " ground", isBe = wi === be.idx;
+      var up = wi % 2 === 0, kind = w[5] === "prop" ? " prop" : "", live = w[3] ? " live" : " ground", isBe = false;
       var dot = document.createElement("div"); dot.className = "tl-dot" + kind + live + (isBe ? " be" : ""); dot.setAttribute("aria-hidden", "true");
       var dn = document.createElement("span"); dn.textContent = String(wi + 1); dot.appendChild(dn);
       put(dot, (2 * wi + 2) + " / " + (2 * wi + 4), "3");
@@ -1139,12 +1519,12 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
       var t = document.createElement("b"); t.textContent = w[0]; var dd = document.createElement("span"); dd.textContent = w[1];
       h.appendChild(t); h.appendChild(dd); c.appendChild(h);
       var ul = document.createElement("ul"); ul.className = "ilist";
-      (DO[wi] || w[4]).forEach(function (it) { var li = document.createElement("li"); var sv = el("svg", { class: "i" }, li); el("use", { href: "#i-" + it[0] }, sv); var sp = document.createElement("span"); sp.textContent = it[1]; li.appendChild(sp); ul.appendChild(li); });
+      (DO[wi] || w[4]).forEach(function (it) { var li = document.createElement("li"); var sv = el("svg", { class: "i" }, li); el("use", { href: "#i-" + it[0] }, sv); var sp = document.createElement("span"); sp.textContent = tc(it[1]); li.appendChild(sp); ul.appendChild(li); });
       c.appendChild(ul);
       var f = document.createElement("div"); f.className = "wk-f";
-      var st = document.createElement("span"); st.className = "wk-n"; st.textContent = w[3] ? w[3].toLocaleString("en-IN") + " students" : (wi < 2 ? "groundwork" : "no program days");
+      var st = document.createElement("span"); st.className = "wk-n"; st.textContent = w[3] ? w[3].toLocaleString("en-IN") + " students" : (wi < 2 ? "Groundwork" : "No Program Days");
       var rv = document.createElement("span"); rv.className = "wk-r";
-      rv.textContent = !w[3] ? "" : be.idx >= 0 && wi > be.idx ? "✓ covered" : isBe ? "✓ Break-even" : be.pct[wi] + " % of cost";
+      rv.textContent = "";
       f.appendChild(st); f.appendChild(rv); c.appendChild(f);
       if (kind) { var tg = document.createElement("span"); tg.className = "wk-tag"; tg.textContent = "proposal"; c.appendChild(tg); }
       c.style.animationDelay = (wi * 70) + "ms";
@@ -1215,7 +1595,7 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     var host = document.getElementById("chMonths"); host.textContent = "";
     var stu = MONTHS.map(function (m) { return stuOf(m, size); });
     var W = 1000, H = 258, L = 64, R = 985, T = 26, B = 202, max = Math.max.apply(null, stu) * 1.15 || 1;
-    var s = el("svg", { class: "ch", viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Students reached per month, November 2026 to December 2027, with exam and holiday months shaded and break-even marked in December 2026." }, host);
+    var s = el("svg", { class: "ch", viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Students reached per month, January to December 2027, with exam and holiday months shaded." }, host);
     var y = function (v) { return B - (v / max) * (B - T); }, bw = (R - L) / MONTHS.length;
     MONTHS.forEach(function (m, i) { if (m[4]) el("rect", { x: L + i * bw, y: T, width: bw, height: B - T, fill: "var(--code-bg)" }, s); });
     var step = max > 15000 ? 4000 : max > 6000 ? 2000 : 1000;
@@ -1226,17 +1606,13 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
       if (stu[i]) el("text", { x: x + bwid / 2, y: y(stu[i]) - 6, "text-anchor": "middle", style: "font-weight:700;fill:var(--ink)" }, s, stu[i] >= 1000 ? (stu[i] / 1000).toFixed(stu[i] % 1000 ? 1 : 0) + "k" : String(stu[i]));
       el("text", { x: x + bwid / 2, y: B + 17, "text-anchor": "middle" }, s, m[0].slice(0, 3));
       if (i === 0 || m[0].indexOf("Jan") === 0) el("text", { x: x + bwid / 2, y: B + 31, "text-anchor": "middle", style: "font-weight:700" }, s, m[0].slice(4));
-      el("rect", { class: "hit", x: L + i * bw, y: T, width: bw, height: B - T, "data-tip": m[0] + " · " + m[3] + "\n" + (m[5] != null ? "weekly plan" : m[1] + " customer schools × " + m[2] + " weeks") + "\n" + stu[i].toLocaleString("en-IN") + " students" }, s);
+      el("rect", { class: "hit", x: L + i * bw, y: T, width: bw, height: B - T, "data-tip": m[0] + " · " + m[3] + "\n" + (m[5] != null ? "weekly plan" : m[1] + " schools × " + m[2] + " weeks") + "\n" + stu[i].toLocaleString("en-IN") + " students" }, s);
     });
-    var bx = L + 1 * bw + bw / 2;
-    el("line", { class: "mile", x1: bx, x2: bx, y1: T - 14, y2: B }, s);
-    el("polygon", { points: [bx, T - 20, bx + 7, T - 13, bx, T - 6, bx - 7, T - 13].join(" "), fill: "var(--good)" }, s);
-    el("text", { x: bx + 12, y: T - 9, style: "font-weight:700;fill:var(--good)" }, s, "Break-even");
     return stu;
   }
 
   function cards(boxId, rows) {
-    var box = document.getElementById(boxId); box.textContent = "";
+    var box = document.getElementById(boxId); if (!box) return; box.textContent = "";
     rows.forEach(function (r) { var d = document.createElement("div"); d.className = "res" + (r[3] ? " " + r[3] : ""); var a = document.createElement("span"); a.className = "lbl"; a.textContent = r[0]; var b = document.createElement("b"); b.textContent = r[1]; var c = document.createElement("span"); c.className = "s"; c.textContent = r[2]; d.appendChild(a); d.appendChild(b); d.appendChild(c); box.appendChild(d); });
   }
 
@@ -1268,7 +1644,7 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     var tb = document.getElementById("monthRows"); tb.textContent = "";
     MONTHS.forEach(function (m, i) { var tr = document.createElement("tr"); [m[0], m[3], m[5] != null ? "weekly plan" : String(m[1]), m[5] != null ? "—" : String(m[2]), stu[i].toLocaleString("en-IN")].forEach(function (v, k) { var td = document.createElement("td"); if (k > 1) td.className = "n"; td.textContent = v; tr.appendChild(td); }); tb.appendChild(tr); });
   }
-  ["cPrice", "cSize", "cStaff", "cOther", "cKit", "cDays", "cAfter"].forEach(function (id) { document.getElementById(id).addEventListener("input", update); });
+  ["cPrice", "cSize", "cStaff", "cOther", "cKit", "cDays", "cAfter"].forEach(function (id) { var e = document.getElementById(id); if (e) e.addEventListener("input", update); });
   update();
 
   (function () {
@@ -1380,7 +1756,7 @@ figcaption.gloss b { color: var(--ink); margin-right: 6px; }
     head.style.setProperty("--prog", (screens.length > 1 ? i / (screens.length - 1) * 100 : 100) + "%");
     pgNow.textContent = pad(i + 1); pgPrev.disabled = i === 0;
     var last = i === screens.length - 1, nx = screens[i + 1];
-    pgNextK.textContent = last ? "Back to" : "Next"; pgNextT.textContent = last ? "the start" : titleOf(nx);
+    pgNextK.textContent = last ? "Back to" : "Next"; pgNextT.textContent = last ? "The Start" : titleOf(nx);
     pgNext.setAttribute("aria-label", last ? "Back to the start" : "Next: " + titleOf(nx));
     try { history.replaceState(null, "", "#" + b.id); } catch (e) {}
   }
